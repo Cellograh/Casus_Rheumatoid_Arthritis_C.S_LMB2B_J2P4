@@ -1,0 +1,11 @@
+spell_name,incantation,power,accuracy,danger_level,spell_type
+Expelliarmus,Expelliarmus,70,90,Medium,Defense
+Avada Kedavra,Avada Kedavra,100,95,Extreme,Curse
+Lumos,Lumos,10,99,Low,Utility
+Wingardium Leviosa,Wingardium Leviosa,30,85,Low,Utility
+Stupefy,Stupefy,65,88,Medium,Attack
+Crucio,Crucio,95,80,Extreme,Curse
+Alohomora,Alohomora,5,98,Low,Utility
+Protego,Protego,50,92,Low,Defense
+Sectumsempra,Sectumsempra,90,75,High,Curse
+Rictusempra,Rictusempra,40,87,Low,Charm
