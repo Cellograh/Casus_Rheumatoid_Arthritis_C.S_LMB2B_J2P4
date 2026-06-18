@@ -5,3 +5,14 @@ buildindex(
   reference = 'GCF_000001405.40_GRCh38.p14_genomic.fna',
   memory = 4000,
   indexSplit = TRUE)
+
+align.Fem_31_1_Norm_A <- align(index = "Casus_RA", readfile1 = "SRR4785819_1_subset40k.fastq", readfile2 = "SRR4785819_2_subset40k.fastq", output_file = "Fem_31_1_Norm.A.BAM")
+align.Fem_15_1_Norm_A <- align(index = "Casus_RA", readfile1 = "SRR4785820_1_subset40k.fastq", readfile2 = "SRR4785820_2_subset40k.fastq", output_file = "Fem_15_1_Norm.A.BAM")
+align.Fem_31_2_Norm_A <- align(index = "Casus_RA", readfile1 = "SRR4785828_1_subset40k.fastq", readfile2 = "SRR4785828_2_subset40k.fastq", output_file = "Fem_31_2_Norm.A.BAM")
+align.Fem_42_1_Norm_A <- align(index = "Casus_RA", readfile1 = "SRR4785831_1_subset40k.fastq", readfile2 = "SRR4785831_2_subset40k.fastq", output_file = "Fem_42_1_Norm.A.BAM")
+align.Fem_54_1_RA_A <- align(index = "Casus_RA", readfile1 = "SRR4785979_1_subset40k.fastq", readfile2 = "SRR4785979_2_subset40k.fastq", output_file = "Fem_54_1_RA.A.BAM")
+align.Fem_66_1_RA_A <- align(index = "Casus_RA", readfile1 = "SRR4785980_1_subset40k.fastq", readfile2 = "SRR4785980_2_subset40k.fastq", output_file = "Fem_66_1_RA.A.BAM")
+align.Fem_60_1_RA_A <- align(index = "Casus_RA", readfile1 = "SRR4785986_1_subset40k.fastq", readfile2 = "SRR4785986_2_subset40k.fastq", output_file = "Fem_60_1_RA.A.BAM")
+align.Fem_59_1_RA_A <- align(index = "Casus_RA", readfile1 = "SRR4785988_1_subset40k.fastq", readfile2 = "SRR4785988_2_subset40k.fastq", output_file = "Fem_59_1_RA.A.BAM")
+
+samples <- c('Fem_31_1_Norm.A.BAM', 'Fem_15_1_Norm.A.BAM', 'Fem_31_2_Norm.A.BAM', 'Fem_42_1_Norm.A.BAM', 'Fem_54_1_RA.A.BAM', 'Fem_66_1_RA.A.BAM', 'Fem_60_1_RA.A.BAM', 'Fem_59_1_RA.A.BAM')
