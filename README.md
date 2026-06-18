@@ -75,17 +75,15 @@ PCA-analyse
 
 ![PCA-analyse](resultaten/PCAplot.png)
 
+*figuur 1: dotplot van de uitgevoerde PCA-analyse waarbij de verschillende groepen tegen elkaar zijn uitgezet op basis van variance*
+
 De PCA-analyse liet een duidelijke scheiding zien tussen gezonde controles en RA-patiënten. De eerste twee componenten verklaarden gezamenlijk ongeveer 84% van de totale variantie (PC1 = 74%, PC2 = 10%). Dit wijst op substantiële transcriptomische verschillen tussen beide groepen.
 
 
-
-
 ## Differentiële genexpressie
-De DESeq2-analyse identificeerde in totaal 4572 significant differentieel geëxprimeerde genen.
-- 2085 upregulated genen
-- 2487 downregulated genen
-- 
-*samenvatting DESeq2-resultaten*
+De [DESeq2-analyse](scripts/DESeq2) identificeerde in totaal 4572 significant differentieel geëxprimeerde genen zoals zichtbaar is in de verkregen [DESeq2 resultaten](resultaten/DESeq2). Een samenvatting van deze resultaten is zichtbaar in tabel 1.
+  
+*Tabel 1: samenvatting DESeq2-resultaten*
 | Resultaat | Aantal |
 |------------|--------:|
 | Totaal geanalyseerde genen | XXXX |
@@ -93,9 +91,9 @@ De DESeq2-analyse identificeerde in totaal 4572 significant differentieel geëxp
 | Upregulated genen | 2085 |
 | Downregulated genen | 2487 |
 
-De volcano plot toont een duidelijke verdeling van significante en niet-significante genen.
+Ook is er een [volcano plot](scripts/!     gemaakt voor het uitzetten van de significantie en de expressie van de geanalyseerde genen, dit plot toont een duidelijke verdeling van significante en niet-significante genen.
 
-*Belangrijkste upregulated genen en hun functie*
+*Tabel X: Belangrijkste upregulated genes en hun functie*
 | Gen | log2 Fold Change | functie |
 |------|------:|------|
 | BCL2A1 | 6.71 | Regulatie van apoptose en ontstekingsreacties |
@@ -111,7 +109,7 @@ De volcano plot toont een duidelijke verdeling van significante en niet-signific
 
 Verschillende immunoglobulinegenen werden sterk verhoogd gevonden, waaronder IGHV4-4, IGHV3-53, IGKJ2 en IGLV1-47. Dit suggereert verhoogde B-celactiviteit en antilichaamproductie, wat kenmerkend is voor auto-immuunziekten zoals RA.
 
-*Belangrijkste downregulated genen en fun functie*
+*Tabel X: Belangrijkste downregulated genes en fun functie*
 | Gen | log2 Fold Change | Mogelijke functie |
 |------|------:|------|
 | ANKRD30BL | -10.12 | Transcriptieregulatie |
@@ -128,13 +126,13 @@ De heatmap van de 50 meest significante genen liet een duidelijke clustering zie
 
 
 ## GO Analyse
-Om de biologische betekenis van de gevonden differentieel geëxprimeerde genen te onderzoeken werd een Gene Ontology (GO) Biological Process analyse uitgevoerd. In totaal werden 323 significant verrijkte biologische processen geïdentificeerd.
+Om de biologische betekenis van de gevonden differentieel geëxprimeerde genen te onderzoeken werd een [Gene Ontology (GO) Biological Process analyse](scripts/GO_analyse) uitgevoerd. In totaal werden 323 significant verrijkte biologische processen geïdentificeerd.
 
 De meest significant verrijkte processen waren sterk gerelateerd aan de adaptieve immuunrespons en de activatie van lymfocyten. De hoogst scorende GO-term was:
-
 "Adaptive immune response based on somatic recombination of immune receptors built from immunoglobulin superfamily domains" (152 genen, adjusted p-value = 7,07 × 10⁻¹²).
 
 Daarnaast werden sterke verrijkingen gevonden voor:
+*Tabel X: sterkst verijkte processen biologische processen en hoeveelheid gerelateerde genen*
 | GO Biological Process | Genen |
 |----------------------|-------:|
 | Adaptive immune response based on somatic recombination of immune receptors | 152 |
@@ -150,8 +148,7 @@ Daarnaast werden sterke verrijkingen gevonden voor:
 
 ## KEGG Analyse
 
-KEGG pathway enrichment analyse identificeerde meerdere ontstekingsgerelateerde pathways.
-
+De [KEGG pathway enrichment analyse](scripts/KEGG) identificeerde meerdere ontstekingsgerelateerde pathways.
 Belangrijke pathways waren:
 Rheumatoid Arthritis pathway
 TNF signaling pathway
