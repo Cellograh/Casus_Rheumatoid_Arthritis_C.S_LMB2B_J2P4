@@ -1,9 +1,0 @@
-spell_name,incantation,power,accuracy,danger_level,spell_type
-Sectumsempra,Sectumsempra,90,75,High,Curse
-Expelliarmus,Expelliarmus,70,90,Medium,Defense
-Stupefy,Stupefy,65,88,Medium,Attack
-Protego,Protego,50,92,Low,Defense
-Rictusempra,Rictusempra,40,87,Low,Charm
-Wingardium Leviosa,Wingardium Leviosa,30,85,Low,Utility
-Lumos,Lumos,10,99,Low,Utility
-Alohomora,Alohomora,5,98,Low,Utility
