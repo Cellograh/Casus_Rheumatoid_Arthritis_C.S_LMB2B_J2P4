@@ -1,8 +1,7 @@
 library(Rsamtools)
 library(Rsubread)
-sortBam(
-  file = "sample.BAM",
-  destination = "sample.sorted")
-  indexBam (file = "sample.sorted.bam")
 
+lapply(samples, function(s) {sortBam(file = paste0(s, '.BAM'), destination = paste0(s, '.sorted'))})
+
+lapply(samples, function(s) {indexBam(file = paste0(s, '.sorted.bam'))})
  
