@@ -20,8 +20,8 @@ Dit project onderzoekt verschillen in genexpressie tussen gezonde individuen en 
     - `gene pathway analysis`
 - Conclusie
 - Data Stewardship
-      - `beheren`
-      - `github`
+    - `beheren`
+    - `github`
 - Referenties
 
 ## Inleiding
