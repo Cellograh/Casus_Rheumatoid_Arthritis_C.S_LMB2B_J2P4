@@ -7,33 +7,24 @@ library(clusterProfiler)
 library(org.Hs.eg.db)
 library(enrichplot)
 
-gene_symbols <- rownames(sig_genes)
+sig_genes <- rownames(resultaten[
+  which(resultaten$padj < 0.05 &
+          abs(resultaten$log2FoldChange) > 1),])
+length(sig_genes)
 
-entrez <- bitr(
-  gene_symbols,
+gene_df <- bitr(
+  sig_genes,
   fromType = "SYMBOL",
   toType = "ENTREZID",
-  OrgDb = org.Hs.eg.db
-)
+  OrgDb = org.Hs.eg.db)
 
-head(entrez)
-
-kegg <- enrichKEGG(
-  gene = entrez$ENTREZID,
+kegg_results <- enrichKEGG(
+  gene = gene_df$ENTREZID,
   organism = "hsa",
-  pvalueCutoff = 0.05
-)
+  pvalueCutoff = 0.05)
+#resultaten bekijken
+head(as.data.frame(kegg_results))
 
-head(kegg)
+dotplot(kegg_results, showCategory = 15) 
 
-dotplot(kegg)
 
-#interesante genen van KEGG
-
-kegg <- enrichKEGG(
-  gene = entrez$ENTREZID,
-  organism = "hsa",
-  pvalueCutoff = 0.05
-)
-
-as.data.frame(kegg)[1:20, ]
