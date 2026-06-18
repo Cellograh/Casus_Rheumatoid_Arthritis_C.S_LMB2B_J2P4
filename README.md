@@ -1,23 +1,19 @@
+# *Transcriptomicsanalyse van de verschillen in genexpressie bij patientien met Reumatoïde Artritis ten opzichte van gezonde patienten.*
 <p align="center">
   <img src="assets/housegrah.png" alt="housegrah" width="600"/>
 </p>
 
-## 📁 Inhoud/structuur-preview
-- `data/raw/` – fictionele datasets voor de analyse van spreuk effectiviteit, gevaar en welke spreuken het beste samengaan met verschillende types staf.  
+structuur-preview zoals de mappen
+- `data/raw/` – datasets voor de analyse 
 - `data/processed` - verwerkte datasets gegenereerd met scripts 
-- `scripts/` – scripts om prachtige onzin te genereren
+- `scripts/` – scripts
 - `resultaten/` - grafieken en tabellen
 - `bronnen/` - gebruikte bronnen 
 - `README.md` - het document om de tekst hier te genereren
 - `assets/` - overige documenten voor de opmaak van deze pagina
 - `data_stewardship/` - Voor de competentie beheren ga je aantonen dat je projectgegevens kunt beheren met behulp van GitHub. In deze folder kan je hulpvragen terugvinden om je op gang te helpen met de uitleg van data stewardship. 
 ---
-## Introductie
-## Methoden
-## 📊 Resultaten
-## Conclusie
 
-Transcriptomische Analyse van Reumatoïde Artritis
 ## Introductie
 Dit project onderzoekt verschillen in genexpressie tussen gezonde individuen en patiënten met Reumatoïde Artritis (RA) met behulp van RNA-sequencing data. Door middel van differentiële expressieanalyse is onderzocht welke genen significant verhoogd (upregulated) of verlaagd (downregulated) tot expressie komen bij RA-patiënten. Daarnaast zijn functionele analyses uitgevoerd om biologische processen en signaalroutes te identificeren die betrokken zijn bij de ziekte.
 
