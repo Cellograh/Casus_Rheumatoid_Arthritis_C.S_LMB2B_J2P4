@@ -1,0 +1,8 @@
+library(pheatmap)
+
+top50 <- head(order(resultaten$padj), 50)
+mat <- assay(vsd)[top50, ]
+pheatmap(
+  mat,
+  scale = "row",
+  annotation_col = treatment_table)
