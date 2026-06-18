@@ -1,0 +1,11 @@
+library(Rsubread)
+buildindex(
+  basename = "ref_human",
+  reference = "GCF_000001405.40_GRCh38.p14_genomic.fna",
+  memory = 4000,
+  indexSplit = TRUE)
+align(
+  index = "ref_human",
+  readfile1 = "sample_R1.fastq",
+  readfile2 = "sample_R2.fastq",
+  output_file = "sample.BAM")

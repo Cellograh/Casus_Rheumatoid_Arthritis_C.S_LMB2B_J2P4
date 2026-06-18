@@ -1,0 +1,8 @@
+library(Rsamtools)
+library(Rsubread)
+sortBam(
+  file = "sample.BAM",
+  destination = "sample.sorted")
+  indexBam (file = "sample.sorted.bam")
+
+ 

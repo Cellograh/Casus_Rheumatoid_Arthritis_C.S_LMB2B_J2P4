@@ -1,0 +1,31 @@
+library(DESeq2)
+
+treatment <- c(
+  "Normal", "Normal", "Normal", "Normal",
+  "RA", "RA", "RA", "RA")
+
+treatment_table <- data.frame(treatment)
+
+rownames(treatment_table) <- c(
+  "RA1_sorted",
+  "RA2_sorted",
+  "RA3_sorted",
+  "RA4_sorted",
+  "RA5_sorted",
+  "RA6_sorted",
+  "RA7_sorted",
+  "RA8_sorted")
+
+dds <- DESeqDataSetFromMatrix(
+  countData = counts,
+  colData = treatment_table,
+  design = ~ treatment)
+
+dds <- DESeq(dds)
+
+resultaten <- results(dds)
+
+sig_genes <- resultaten[
+  !is.na(resultaten$padj) &
+  resultaten$padj < 0.05,
+]

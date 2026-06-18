@@ -1,0 +1,39 @@
+
+BiocManager::install("clusterProfiler")
+BiocManager::install("org.Hs.eg.db")
+BiocManager::install("enrichplot")
+
+library(clusterProfiler)
+library(org.Hs.eg.db)
+library(enrichplot)
+
+gene_symbols <- rownames(sig_genes)
+
+entrez <- bitr(
+  gene_symbols,
+  fromType = "SYMBOL",
+  toType = "ENTREZID",
+  OrgDb = org.Hs.eg.db
+)
+
+head(entrez)
+
+kegg <- enrichKEGG(
+  gene = entrez$ENTREZID,
+  organism = "hsa",
+  pvalueCutoff = 0.05
+)
+
+head(kegg)
+
+dotplot(kegg)
+
+#interesante genen van KEGG
+
+kegg <- enrichKEGG(
+  gene = entrez$ENTREZID,
+  organism = "hsa",
+  pvalueCutoff = 0.05
+)
+
+as.data.frame(kegg)[1:20, ]
