@@ -1,10 +1,7 @@
- featureCounts(
-  files = "sample.sorted.bam",
+count_matrix <- featureCounts(
+  files = samples,
   annot.ext = "genomic.gtf",
   isPairedEnd = TRUE,
   isGTFAnnotationFile = TRUE,
   GTF.attrType = "gene_id",
   useMetaFeatures = TRUE)
-counts <- count_matrix$counts
-dim(counts)
-head(counts)
