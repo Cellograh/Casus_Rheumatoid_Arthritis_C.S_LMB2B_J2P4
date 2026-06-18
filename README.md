@@ -1,6 +1,6 @@
 # *Transcriptomicsanalyse van de verschillen in genexpressie bij patientien met Reumatoïde Artritis ten opzichte van gezonde patienten.*
 <p align="center">
-  <img src="assets/housegrah.png" alt="housegrah" width="600"/>
+  <img src="assets/Rheumatoid_Arthritis_Titleimage.png" alt="RAtitle" width="800"/>
 </p>
 
 structuur-preview zoals de mappen
@@ -21,9 +21,17 @@ Dit project onderzoekt verschillen in genexpressie tussen gezonde individuen en 
 - Inleiding
 - Methode
 - Resultaten
+    - `PCA-plot`
+    - `DESeq2-analyse`
+    - `volcano plot`
+    - `heatmap`
+    - `KEGG pathway enrichment analyse`
+    - `GO-analyse`
+    - `gene pathway analysis`
 - Conclusie
 - Data Stewardship
-- GitHub Beheer
+      -`beheren`
+      -`github`
 - Referenties
 
 ## Inleiding
