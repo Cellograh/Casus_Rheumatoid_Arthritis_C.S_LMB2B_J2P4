@@ -3,16 +3,6 @@
   <img src="assets/Rheumatoid_Arthritis_Titleimage.png" alt="RAtitle" width="800"/>
 </p>
 
-structuur-preview zoals de mappen
-- `data/raw/` – datasets voor de analyse 
-- `data/processed` - verwerkte datasets gegenereerd met scripts 
-- `scripts/` – scripts
-- `resultaten/` - grafieken en tabellen
-- `bronnen/` - gebruikte bronnen 
-- `README.md` - het document om de tekst hier te genereren
-- `assets/` - overige documenten voor de opmaak van deze pagina
-- `data_stewardship/` - Voor de competentie beheren ga je aantonen dat je projectgegevens kunt beheren met behulp van GitHub. In deze folder kan je hulpvragen terugvinden om je op gang te helpen met de uitleg van data stewardship. 
----
 
 ## Introductie
 Dit project onderzoekt verschillen in genexpressie tussen gezonde individuen en patiënten met Reumatoïde Artritis (RA) met behulp van RNA-sequencing data. Door middel van differentiële expressieanalyse is onderzocht welke genen significant verhoogd (upregulated) of verlaagd (downregulated) tot expressie komen bij RA-patiënten. Daarnaast zijn functionele analyses uitgevoerd om biologische processen en signaalroutes te identificeren die betrokken zijn bij de ziekte.
@@ -30,8 +20,8 @@ Dit project onderzoekt verschillen in genexpressie tussen gezonde individuen en 
     - `gene pathway analysis`
 - Conclusie
 - Data Stewardship
-      -`beheren`
-      -`github`
+      - `beheren`
+      - `github`
 - Referenties
 
 ## Inleiding
