@@ -5,7 +5,7 @@
 
 
 ## Introductie
-Dit project onderzoekt verschillen in genexpressie tussen gezonde individuen en patiënten met Reumatoïde Artritis (RA) met behulp van RNA-sequencing data. Door middel van differentiële expressieanalyse is onderzocht welke genen significant verhoogd (upregulated) of verlaagd (downregulated) tot expressie komen bij RA-patiënten. Daarnaast zijn functionele analyses uitgevoerd om biologische processen en signaalroutes te identificeren die betrokken zijn bij de ziekte.
+Dit project onderzoekt verschillen in genexpressie tussen gezonde individuen en patiënten met Reumatoïde Artritis (RA) met behulp van [RNA-sequencing data](data/raw). Doormiddel van differentiële expressieanalyse is onderzocht welke genen significant verhoogd (upregulated) of verlaagd (downregulated) tot expressie komen bij RA-patiënten. Daarnaast zijn functionele analyses uitgevoerd om biologische processen en signaalroutes te identificeren die betrokken zijn bij de ziekte.
 
 ## Inhoudsopgave
 - Inleiding
@@ -33,12 +33,10 @@ Het doel van dit onderzoek is het vergelijken van genexpressieprofielen tussen g
 
 ## Methode
 Voor deze analyse werd gebruikgemaakt van RNA-sequencing data afkomstig van vier gezonde controles en vier patiënten met Reumatoïde Artritis.
-De ruwe paired-end FASTQ-bestanden werden gemapt tegen het humane referentiegenoom (GRCh38) met behulp van het Rsubread-pakket. Vervolgens werden reads per gen geteld met FeatureCounts, waarna een count matrix werd opgesteld.
-Differentiële expressieanalyse werd uitgevoerd met DESeq2. Genen werden beschouwd als significant differentieel geëxprimeerd wanneer voldaan werd aan:
+De [ruwe paired-end FASTQ-bestanden](data/raw) werden [gemapt](scripts/mapping) tegen het humane referentiegenoom (GRCh38) met behulp van het [Rsubread-pakket](scripts/packages). Vervolgens werden reads per gen geteld met FeatureCounts, waarna een [count matrix](scripts/countmatrix) werd opgesteld. Differentiële expressieanalyse werd uitgevoerd met [DESeq2](scripts/DESeq2). Genen werden beschouwd als statistisch significant wanneer voldaan werd aan:
 Adjusted p-value (padj) < 0,05
 Absolute log2 Fold Change > 1
-Voor kwaliteitscontrole werd een Principal Component Analysis (PCA) uitgevoerd. Daarnaast werd een heatmap gemaakt van de 50 meest significante genen en een volcano plot om de verdeling van differentieel geëxprimeerde genen te visualiseren.
-Om de biologische betekenis van de gevonden genen te onderzoeken werden Gene Ontology (GO)-analyse, KEGG pathway enrichment analyse en Pathview pathway visualisaties uitgevoerd.
+Voor kwaliteitscontrole werd een [Principal Component Analysis (PCA)](scripts!  uitgevoerd. Daarnaast werd een heatmap gemaakt van de 50 meest significante genen en een volcano plot om de verdeling van differentieel geëxprimeerde genen te visualiseren. Om de biologische betekenis van de gevonden genen te onderzoeken werden [Gene Ontology (GO)-analyse](scripts/packages), [KEGG pathway enrichment analyse](scripts/packages) en [Pathview](scripts/packages) pathway visualisaties uitgevoerd.
 
 ## Workflow
 
@@ -73,11 +71,11 @@ PCA-analyse
 
 ![PCA-analyse](resultaten/PCAplot.png)
 
-*figuur 1: dotplot van de uitgevoerde PCA-analyse waarbij de verschillende groepen tegen elkaar zijn uitgezet op basis van variance*
+*Figuur 2. Principal Component Analysis (PCA) van RNA-sequencing monsters afkomstig van gezonde controles en patiënten met Reumatoïde Artritis.*
 
-De PCA-analyse liet een duidelijke scheiding zien tussen gezonde controles en RA-patiënten. De eerste twee componenten verklaarden gezamenlijk ongeveer 84% van de totale variantie (PC1 = 74%, PC2 = 10%). Dit wijst op substantiële transcriptomische verschillen tussen beide groepen.
+De PCA-analyse liet een duidelijke scheiding zien tussen gezonde controles en RA-patiënten. De eerste twee componenten bevatten gezamenlijk ongeveer 84% van de totale variantie (PC1 = 74%, PC2 = 10%) . Dit laat zichtbare clustering zien.
 
-
+---
 ## Differentiële genexpressie
 De [DESeq2-analyse](scripts/DESeq2) identificeerde in totaal 4572 significant differentieel geëxprimeerde genen zoals zichtbaar is in de verkregen [DESeq2 resultaten](resultaten/DESeq2). Een samenvatting van deze resultaten is zichtbaar in tabel 1.
   
@@ -89,9 +87,9 @@ De [DESeq2-analyse](scripts/DESeq2) identificeerde in totaal 4572 significant di
 | Upregulated genen | 2085 |
 | Downregulated genen | 2487 |
 
-Ook is er een [volcano plot](scripts/!     gemaakt voor het uitzetten van de significantie en de expressie van de geanalyseerde genen, dit plot toont een duidelijke verdeling van significante en niet-significante genen.
+De analyse toont aan dat een groot aantal genen significant verschillend tot expressie komt tussen gezonde individuen en RA-patiënten. Dit bevestigt dat Reumatoïde Artritis gepaard gaat met aanwezige veranderingen in genexpressie, deze expressie wordt zowel verhoogd (upregulated) of verlaagd (downregulated). De belangrijkste up- en downregulated genen zijn zichtbaar in figuur 2 en 3
 
-*Tabel X: Belangrijkste upregulated genes en hun functie*
+*Tabel 2: Belangrijkste upregulated genes en hun functie*
 | Gen | log2 Fold Change | functie |
 |------|------:|------|
 | BCL2A1 | 6.71 | Regulatie van apoptose en ontstekingsreacties |
@@ -107,7 +105,7 @@ Ook is er een [volcano plot](scripts/!     gemaakt voor het uitzetten van de sig
 
 Verschillende immunoglobulinegenen werden sterk verhoogd gevonden, waaronder IGHV4-4, IGHV3-53, IGKJ2 en IGLV1-47. Dit suggereert verhoogde B-celactiviteit en antilichaamproductie, wat kenmerkend is voor auto-immuunziekten zoals RA.
 
-*Tabel X: Belangrijkste downregulated genes en fun functie*
+*Tabel 3: Belangrijkste downregulated genes en fun functie*
 | Gen | log2 Fold Change | Mogelijke functie |
 |------|------:|------|
 | ANKRD30BL | -10.12 | Transcriptieregulatie |
@@ -116,21 +114,31 @@ Verschillende immunoglobulinegenen werden sterk verhoogd gevonden, waaronder IGH
 | SLC9A3R2 | -5.62 | Iontransport |
 | ZNF598 | -4.44 | Regulatie van translatie |
 | Overige significante genen | < -4 | Diverse cellulaire processen |
+---
+Ook is er een [volcano plot](scripts/Volcanoplot) gemaakt voor het uitzetten van de significantie en de expressie van de geanalyseerde genen, dit plot toont een duidelijke verdeling van significante en niet-significante genen en geven een overzicht van alle geanalyseerde genen. Genen met een verhoogde expressie in RA bevinden zich aan de rechterzijde van de grafiek, terwijl genen met een verlaagde expressie aan de linkerzijde zichtbaar zijn. 
 
+![volcanoplot](resultaten/volcanoplot.png)
+
+*Figuur 3. Volcano plot van differentieel geëxprimeerde genen tussen gezonde controles en patiënten met Reumatoïde Artritis. De x-as geeft de log2 Fold Change weer en de y-as de negatieve log10 van de aangepaste p-waarde.*
+
+
+---
 ## Heatmap
 De heatmap van de 50 meest significante genen liet een duidelijke clustering zien waarbij gezonde controles en RA-patiënten volledig van elkaar gescheiden werden.
 
+![heatmap](resultaten/heatmapplot.png)
 
+*Figuur 4. Heatmap van de 50 meest significante differentieel geëxprimeerde genen. Iedere rij vertegenwoordigt een gen en iedere kolom een monster. Rood geeft verhoogde expressie weer en blauw verlaagde expressie. De duidelijke clustering van gezonde controles en RA-patiënten bevestigt de aanwezigheid van consistente transcriptomische verschillen tussen beide groepen.*
 
-
+---
 ## GO Analyse
 Om de biologische betekenis van de gevonden differentieel geëxprimeerde genen te onderzoeken werd een [Gene Ontology (GO) Biological Process analyse](scripts/GO_analyse) uitgevoerd. In totaal werden 323 significant verrijkte biologische processen geïdentificeerd.
 
 De meest significant verrijkte processen waren sterk gerelateerd aan de adaptieve immuunrespons en de activatie van lymfocyten. De hoogst scorende GO-term was:
 "Adaptive immune response based on somatic recombination of immune receptors built from immunoglobulin superfamily domains" (152 genen, adjusted p-value = 7,07 × 10⁻¹²).
 
-Daarnaast werden sterke verrijkingen gevonden voor:
-*Tabel X: sterkst verijkte processen biologische processen en hoeveelheid gerelateerde genen*
+Daarnaast werden sterk verhoogfde expressie gevonden voor:
+*Tabel 4: sterkst verijkte processen biologische processen en hoeveelheid gerelateerde genen*
 | GO Biological Process | Genen |
 |----------------------|-------:|
 | Adaptive immune response based on somatic recombination of immune receptors | 152 |
