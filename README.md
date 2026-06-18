@@ -73,6 +73,8 @@ L --> O[TNF Pathway]
 ## Resultaten
 PCA-analyse
 
+![PCA-analyse](resultaten/PCAplot.png)
+
 De PCA-analyse liet een duidelijke scheiding zien tussen gezonde controles en RA-patiënten. De eerste twee componenten verklaarden gezamenlijk ongeveer 84% van de totale variantie (PC1 = 74%, PC2 = 10%). Dit wijst op substantiële transcriptomische verschillen tussen beide groepen.
 
 
