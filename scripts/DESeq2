@@ -28,4 +28,6 @@ length(down_genes)
 write.csv(as.data.frame(resultaten),
           "DESeq2_resultaten.csv")
 
-
+#PCA-plot
+vsd <- vst(dds)
+plotPCA(vsd, intgroup = "treatment")
