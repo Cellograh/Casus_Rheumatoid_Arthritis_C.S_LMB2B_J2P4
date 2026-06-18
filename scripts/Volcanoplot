@@ -1,0 +1,14 @@
+library(EnhancedVolcano)
+
+EnhancedVolcano(
+  resultaten,
+  lab = rownames(resultaten),
+  x = "log2FoldChange",
+  y = "padj",
+
+col = c(
+  "seashell3",
+  "steelblue3",
+  "palegreen",
+  "salmon"        
+))
