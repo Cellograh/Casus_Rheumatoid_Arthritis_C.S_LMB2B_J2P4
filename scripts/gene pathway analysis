@@ -1,0 +1,16 @@
+kegg_df <- as.data.frame(kegg_results)
+
+top_pathways <- kegg_df$ID[1:5]
+
+for(pid in top_pathways){
+    pathview(
+    gene.data = fc_vector,
+    pathway.id = gsub("hsa", "", pid),
+    species = "hsa",
+    gene.idtype = "entrez")}
+#beste pathway (rheumatoid artritis)= 
+pathview(
+  gene.data = fc_vector,
+  pathway.id = "hsa05323",
+  species = "hsa",
+  gene.idtype = "entrez")
