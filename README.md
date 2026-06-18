@@ -199,6 +199,6 @@ Li Y. et al. Integrated bioinformatics analysis of rheumatoid arthritis. Frontie
 Love MI, Huber W, Anders S. Moderated estimation of fold change and dispersion for RNA-seq data with DESeq2. Genome Biology. 2014.
 Gene Ontology Consortium. Gene Ontology Resource.
 KEGG Pathway Database.
-
+Khopde, S. (2025, 28 april). Rheumatoid arthritis treatments: Options for managing symptoms [Afbeelding]. Manipal Hospitals Baner.
 
 
