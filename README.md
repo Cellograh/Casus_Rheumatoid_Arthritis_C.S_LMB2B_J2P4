@@ -1,4 +1,4 @@
-# *Transcriptomicsanalyse van de verschillen in genexpressie bij patientien met Reumatoïde Artritis ten opzichte van gezonde patienten.*
+# *Transcriptomicsanalyse van verschillen in genexpressie bij patiënten met Reumatoïde Artritis ten opzichte van gezonde controles*
 <p align="center">
   <img src="assets/Rheumatoid_Arthritis_Titleimage.png" alt="RAtitle" width="800"/>
 </p>
@@ -9,9 +9,10 @@
 Dit project onderzoekt verschillen in genexpressie tussen gezonde individuen en patiënten met Reumatoïde Artritis (RA) met behulp van [RNA-sequencing data](data/raw). Doormiddel van differentiële expressieanalyse is onderzocht welke genen significant verhoogd (upregulated) of verlaagd (downregulated) tot expressie komen bij RA-patiënten. Daarnaast zijn functionele analyses uitgevoerd om biologische processen en signaalroutes te identificeren die betrokken zijn bij de ziekte.
 
 ## Inhoudsopgave
-- Inleiding
-- Methode
-- Resultaten
+- [Inleiding](##Inleiding)
+- [Methode](##Methode)
+- [Workflow](##Workflow)
+- [Resultaten](##Resultaten)
     - `PCA-plot`
     - `DESeq2-analyse`
     - `volcano plot`
@@ -19,24 +20,29 @@ Dit project onderzoekt verschillen in genexpressie tussen gezonde individuen en 
     - `KEGG pathway enrichment analyse`
     - `GO-analyse`
     - `gene pathway analysis`
-- Conclusie
-- Data Stewardship
+- [Conclusie](##Conclusie)
+- [Data Stewardship](##Data-Stewardship)
     - `Data Stewardship`
     - `Github beheer`
-- Referenties
+- [Referenties](##Referenties)
 
 ## Inleiding
 Reumatoïde Artritis (RA) is een chronische auto-immuunziekte die wordt gekenmerkt door ontsteking van de synoviale gewrichten, wat uiteindelijk kan leiden tot kraakbeenafbraak, boterosie en blijvende gewrichtsschade. Wereldwijd wordt ongeveer 0,5–1% van de bevolking getroffen door RA, waardoor de ziekte een belangrijke oorzaak vormt van chronische pijn en verminderde levenskwaliteit. Hoewel de precieze oorzaak van RA nog niet volledig bekend is, speelt ontregeling van het immuunsysteem een centrale rol in de ontwikkeling en progressie van de ziekte. Onderzoek heeft aangetoond dat zowel B-cellen, T-cellen, macrofagen als verschillende cytokinen betrokken zijn bij het onderhouden van de chronische ontstekingsreactie die kenmerkend is voor RA [[3,4]](bronnen/Literatuurlijst_RA.pdf).
 De afgelopen jaren heeft transcriptomics een belangrijke bijdrage geleverd aan het begrijpen van de moleculaire mechanismen achter RA. Door genexpressieprofielen van patiënten en gezonde controles met elkaar te vergelijken kunnen differentieel geëxprimeerde genen (DEGs) worden geïdentificeerd die betrokken zijn bij ontstekingsprocessen, immuunregulatie en ziekteprogressie [[1,5]](bronnen/Literatuurlijst_RA.pdf). Eerdere bio-informatica studies rapporteerden sterke veranderingen in genen die betrokken zijn bij TNF-signaling, IL-17-signaling, B-celactivatie en adaptieve immuunresponsen[[1,2,4]](bronnen/Literatuurlijst_RA.pdf).
 
 Het doel van dit onderzoek is om verschillen in genexpressie tussen gezonde individuen en patiënten met Reumatoïde Artritis te identificeren met behulp van RNA-sequencing data. Daarnaast wordt onderzocht welke genen significant upregulated of downregulated zijn en welke biologische processen en signaalroutes betrokken zijn bij de waargenomen transcriptomische veranderingen.
+### Onderzoeksvraag
+
+Welke genen hebben significante differentiele expressie tussen gezonde individuen en patiënten met Reumatoïde Artritis en welke biologische processen en pathways zijn betrokken bij deze veranderingen?
 
 ## Methode
 Voor deze analyse werd gebruikgemaakt van RNA-sequencing data afkomstig van vier gezonde controles en vier patiënten met Reumatoïde Artritis.
 De [ruwe paired-end FASTQ-bestanden](data/raw) werden [gemapt](scripts/mapping) tegen het humane referentiegenoom (GRCh38) met behulp van het [Rsubread-pakket](scripts/packages). Vervolgens werden reads per gen geteld met FeatureCounts, waarna een [count matrix](scripts/countmatrix) werd opgesteld. Differentiële expressieanalyse werd uitgevoerd met [DESeq2](scripts/DESeq2). Genen werden beschouwd als statistisch significant wanneer voldaan werd aan:
-Adjusted p-value (padj) < 0,05
-Absolute log2 Fold Change > 1
-Voor kwaliteitscontrole werd een [Principal Component Analysis (PCA)](scripts!  uitgevoerd. Daarnaast werd een heatmap gemaakt van de 50 meest significante genen en een volcano plot om de verdeling van differentieel geëxprimeerde genen te visualiseren. Om de biologische betekenis van de gevonden genen te onderzoeken werden [Gene Ontology (GO)-analyse](scripts/packages), [KEGG pathway enrichment analyse](scripts/packages) en [Pathview](scripts/packages) pathway visualisaties uitgevoerd.
+  - Adjusted p-value (padj) < 0,05
+  - Absolute log2 Fold Change > 1
+> DESeq2 maakt gebruik van een negatief binomiaal model om verschillen in genexpressie te bepalen. Om multiple testing te corrigeren werd de Benjamini-Hochberg methode toegepast, waarbij een adjusted p-value (padj) kleiner dan 0,05 als significant werd beschouwd.
+
+Voor kwaliteitscontrole werd een [Principal Component Analysis (PCA)](scripts/DESeq2) uitgevoerd. Daarnaast werd een heatmap gemaakt van de 50 meest significante genen en een volcano plot om de verdeling van differentieel geëxprimeerde genen te visualiseren. Om de biologische betekenis van de gevonden genen te onderzoeken werden [Gene Ontology (GO)-analyse](scripts/packages), [KEGG pathway enrichment analyse](scripts/packages) en [Pathview](scripts/packages) pathway visualisaties uitgevoerd.
 
 ## Workflow
 
@@ -61,7 +67,7 @@ De [DESeq2-analyse](scripts/DESeq2) identificeerde in totaal 4572 significant di
 *Tabel 1: samenvatting DESeq2-resultaten*
 | Resultaat | Aantal |
 |------------|--------:|
-| Totaal geanalyseerde genen | XXXX |
+| Totaal geanalyseerde genen | 29407 |
 | Significant differentieel geëxprimeerde genen | 4572 |
 | Upregulated genen | 2085 |
 | Downregulated genen | 2487 |
@@ -84,7 +90,7 @@ De analyse toont aan dat een groot aantal genen significant verschillend tot exp
 
 Verschillende immunoglobulinegenen werden sterk verhoogd gevonden, waaronder IGHV4-4, IGHV3-53, IGKJ2 en IGLV1-47. Dit suggereert verhoogde B-celactiviteit en antilichaamproductie, wat kenmerkend is voor auto-immuunziekten zoals RA.
 
-*Tabel 3: Belangrijkste downregulated genes en fun functie*
+*Tabel 3: Belangrijkste downregulated genes en hun functie*
 | Gen | log2 Fold Change | Mogelijke functie |
 |------|------:|------|
 | ANKRD30BL | -10.12 | Transcriptieregulatie |
