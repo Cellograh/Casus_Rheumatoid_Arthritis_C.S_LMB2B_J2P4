@@ -154,14 +154,28 @@ De Pathview visualisaties bevestigden dat meerdere genen binnen bekende RA-gerel
 
 ![Rheumatoid Arthritis Pathway](resultaten/RA.pathview.png)
 
+*figuur 6: Pathview-visualisatie van de Rheumatoid Arthritis pathway (KEGG hsa05323). Waarbij rood gekleurde genen verhoogde expressie hadden in RA-patiënten, en groene genen verlaagde expressie.*
 
+De figuur toont dat meerdere genen binnen de RA-pathway afwijkend gereguleerd zijn ten opzichte van gezonde controles.
+
+
+---
 ![IL-17 Signaling Pathway](resultaten/IL17.pathview.png)
 
+*figuur 7: Pathview-visualisatie van de IL-17 signaling pathway (KEGG hsa04657).*
 
-![TNF Signaling Pathway](TNFsignaling.pathview.png)
+De weergegeven expressieveranderingen laten verhoogde activiteit van ontstekingsgerelateerde genen binnen deze pathway zien. IL-17 speelt een belangrijke rol bij de ontwikkeling en instandhouding van chronische ontstekingsprocessen bij Reumatoïde Artritis.
 
 
+---
+![TNF Signaling Pathway](resultaten/TNFsignaling.pathview.png)
 
+*figuur 8: Pathview-visualisatie van de TNF signaling pathway (KEGG hsa04668).*
+
+Verschillende genen binnen deze pathway vertonen significante veranderingen in expressie. TNF-signaling vormt een centrale regulator van ontsteking en is een belangrijk bij de behandeling van Reumatoïde Artritis.
+
+
+---
 ## Conclusie
 
 In dit onderzoek zijn transcriptomische verschillen tussen gezonde individuen en patiënten met Reumatoïde Artritis onderzocht met behulp van RNA-sequencing.
