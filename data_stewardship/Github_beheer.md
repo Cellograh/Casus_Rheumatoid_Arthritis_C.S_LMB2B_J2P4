@@ -1,13 +1,13 @@
-Github beheer
+# Github beheer
 
-Inleiding ----
+## Inleiding
 
 Tijdens dit project is GitHub gebruikt als platform voor versiebeheer, documentatie en het organiseren van alle bestanden die nodig zijn voor de transcriptomicsanalyse van Reumatoïde Artritis. 
 GitHub maakt het mogelijk om analyses, resultaten en documentatie centraal op te slaan en wijzigingen gedurende het project bij te houden.
 Door gebruik te maken van GitHub wordt het onderzoek transparanter en beter reproduceerbaar. Andere onderzoekers of studenten kunnen de gebruikte workflow bekijken, scripts controleren en analyses opnieuw uitvoeren.
 
-
-Bijdrage aan reproduceerbaarheid ----
+---
+## Bijdrage aan reproduceerbaarheid
 
 Reproduceerbaarheid is een belangrijk onderdeel van wetenschappelijk onderzoek. Een onderzoek wordt reproduceerbaar genoemd wanneer anderen dezelfde stappen kunnen uitvoeren en vergelijkbare resultaten kunnen verkrijgen.
 
@@ -22,14 +22,14 @@ De README beschrijft stap voor stap hoe de analyse is uitgevoerd, vanaf de [FAST
 Hierdoor kan een andere gebruiker de [workflow](assets/FlowchartRA.png) volgen en opnieuw uitvoeren.
 Daarnaast is een workflowdiagram opgenomen waarmee de volledige analyseketen overzichtelijk wordt weergegeven.
 
-
-Overzichtelijke structuur van de repository ----
+---
+## Overzichtelijke structuur van de repository
 
 Om het project overzichtelijk te houden is een duidelijke mappenstructuur aangehouden. Deze mappenstructuur zichtbaar en omschreven in het [Data_stewardship](data_stewardship/Data_Stewardship) document 
 Iedere map heeft een specifieke functie, door deze indeling kunnen bestanden eenvoudig worden teruggevonden en blijft duidelijk welke bestanden bij welke stap van het onderzoek horen.
 
-
-gebruiksvriendelijkheid voor andere onderzoekers ----
+---
+## Gebruiksvriendelijkheid voor andere onderzoekers
 
 De repository is zo ingericht dat een andere gebruiker het onderzoek eenvoudig kan begrijpen.
 
@@ -42,7 +42,8 @@ Hiervoor zijn verschillende maatregelen genomen:
 
 Hierdoor hoeft een gebruiker niet zelf uit te zoeken welke bestanden gebruikt zijn tijdens de analyse. De belangrijkste informatie is direct beschikbaar vanuit de hoofdpagina van de repository.
 
-Versiebeheer met Git
+---
+## Versiebeheer met Git
 
 Tijdens het project is gebruikgemaakt van Git voor versiebeheer. Git houdt wijzigingen in bestanden bij zodat eerdere versies altijd kunnen worden teruggevonden.
 
@@ -61,8 +62,8 @@ Voordelen hiervan zijn:
     
 GitHub is hierbij een centrale opslagplaats waarin alle wijzigingen worden bijgehouden.
 
-
-Documentatie ----
+---
+## Documentatie
 
 Goede documentatie is essentieel voor een bruikbare GitHub-repository.
 
@@ -74,6 +75,7 @@ Binnen dit project wordt documentatie verzorgd door:
 
 Hierdoor wordt niet alleen duidelijk wat er gedaan is, maar ook waarom bepaalde keuzes zijn gemaakt.
 
+---
 GitHub heeft binnen dit project een belangrijke rol gespeeld bij het organiseren van bestanden, het beheren van versies en het documenteren van de uitgevoerde analyses. 
 Door een duidelijke mappenstructuur, uitgebreide documentatie en het gebruik van versiebeheer is de repository overzichtelijk en reproduceerbaar gemaakt.
 Een andere onderzoeker kan hierdoor de gebruikte workflow volgen, scripts opnieuw uitvoeren en de resultaten controleren. 
