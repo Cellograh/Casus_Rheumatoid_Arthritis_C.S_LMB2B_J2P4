@@ -134,6 +134,7 @@ Daarnaast werden sterk verhoogde expressie gevonden voor:
 | Leukocyte mediated immunity | 160 |
 | B cell activation | 104 |
 
+---
 ## KEGG Analyse
 
 De [KEGG pathway enrichment analyse](scripts/KEGG) identificeerde meerdere ontstekingsgerelateerde pathways.
@@ -151,13 +152,13 @@ De dotplot toont de meest significant verrijkte KEGG pathways. De grootte van de
 
 De Pathview visualisaties bevestigden dat meerdere genen binnen bekende RA-gerelateerde pathways afwijkende expressie vertonen.
 
-Rheumatoid Arthritis Pathway
+![Rheumatoid Arthritis Pathway](resultaten/RA.pathview.png)
 
 
-IL-17 Signaling Pathway
+![IL-17 Signaling Pathway](resultaten/IL17.pathview.png)
 
 
-TNF Signaling Pathway
+![TNF Signaling Pathway](TNFsignaling.pathview.png)
 
 
 
