@@ -116,7 +116,7 @@ De duidelijke clustering van gezonde controles en RA-patiënten bevestigt de aan
 Om de biologische betekenis van de gevonden differentieel geëxprimeerde genen te onderzoeken werd een [Gene Ontology (GO) Biological Process analyse](scripts/GO_analyse) uitgevoerd. In totaal werden 323 significant verrijkte biologische processen geïdentificeerd.
 
 De meest significant verrijkte processen waren sterk gerelateerd aan de adaptieve immuunrespons en de activatie van lymfocyten. De hoogst scorende GO-term was:
-"Adaptive immune response based on somatic recombination of immune receptors built from immunoglobulin superfamily domains" (152 genen, adjusted p-value = 7,07 × 10⁻¹²).
+> "Adaptive immune response based on somatic recombination of immune receptors built from immunoglobulin superfamily domains" (152 genen, adjusted p-value = 7,07 × 10⁻¹²).
 
 Daarnaast werden sterk verhoogde expressie gevonden voor:
 
@@ -187,17 +187,14 @@ Toekomstig onderzoek zou zich kunnen richten op experimentele validatie van de m
 
 ## Data Stewardship
 
-Zie: docs/Data_Stewardship.md
+Zie: [Data Stewardship](data_stewardship/Data_Stewardship.md) 
 
 ## GitHub Beheer
 
-Zie: docs/GitHub_Beheer.md
+Zie: [GitHub beheer](data_stewardship/Github_beheer.md)
 
 ## Referenties
-Li Y. et al. Integrated bioinformatics analysis of rheumatoid arthritis. Frontiers in Genetics. 2019.
-Love MI, Huber W, Anders S. Moderated estimation of fold change and dispersion for RNA-seq data with DESeq2. Genome Biology. 2014.
-Gene Ontology Consortium. Gene Ontology Resource.
-KEGG Pathway Database.
-Khopde, S. (2025, 28 april). Rheumatoid arthritis treatments: Options for managing symptoms [Afbeelding]. Manipal Hospitals Baner.
+Zie: [Literatuurlijst](bronnen/Literatuurlijst_RA.pdf)
+
 
 
