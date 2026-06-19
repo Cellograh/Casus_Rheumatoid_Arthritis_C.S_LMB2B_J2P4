@@ -3,6 +3,7 @@
   <img src="assets/Rheumatoid_Arthritis_Titleimage.png" alt="RAtitle" width="800"/>
 </p>
 
+*Afbeelding afkomstig van Khopde (2025), Manipal Hospitals Baner.*
 
 ## Introductie
 Dit project onderzoekt verschillen in genexpressie tussen gezonde individuen en patiënten met Reumatoïde Artritis (RA) met behulp van [RNA-sequencing data](data/raw). Doormiddel van differentiële expressieanalyse is onderzocht welke genen significant verhoogd (upregulated) of verlaagd (downregulated) tot expressie komen bij RA-patiënten. Daarnaast zijn functionele analyses uitgevoerd om biologische processen en signaalroutes te identificeren die betrokken zijn bij de ziekte.
@@ -25,11 +26,10 @@ Dit project onderzoekt verschillen in genexpressie tussen gezonde individuen en 
 - Referenties
 
 ## Inleiding
-Reumatoïde Artritis (RA) is een chronische auto-immuunziekte die wordt gekenmerkt door ontsteking van de synoviale gewrichten. Door voortdurende activatie van het immuunsysteem ontstaat schade aan kraakbeen en botweefsel, wat uiteindelijk kan leiden tot gewrichtsdeformatie en functieverlies. Wereldwijd lijdt ongeveer 1% van de bevolking aan deze aandoening.
-Ondanks de beschikbaarheid van verschillende behandelingen zijn de moleculaire mechanismen achter RA nog niet volledig opgehelderd. Transcriptomics biedt de mogelijkheid om veranderingen in genexpressie op grote schaal te onderzoeken en kan inzicht geven in de biologische processen die betrokken zijn bij ziekteontwikkeling.
-Eerdere transcriptomische studies hebben aangetoond dat ontstekingsroutes zoals TNF-signaling, IL-17-signaling en cytokine-gemedieerde immuunresponsen een belangrijke rol spelen bij RA. Het identificeren van differentieel geëxprimeerde genen kan bijdragen aan het ontdekken van nieuwe biomarkers en potentiële therapeutische doelwitten.
+Reumatoïde Artritis (RA) is een chronische auto-immuunziekte die wordt gekenmerkt door ontsteking van de synoviale gewrichten, wat uiteindelijk kan leiden tot kraakbeenafbraak, boterosie en blijvende gewrichtsschade. Wereldwijd wordt ongeveer 0,5–1% van de bevolking getroffen door RA, waardoor de ziekte een belangrijke oorzaak vormt van chronische pijn en verminderde levenskwaliteit. Hoewel de precieze oorzaak van RA nog niet volledig bekend is, speelt ontregeling van het immuunsysteem een centrale rol in de ontwikkeling en progressie van de ziekte. Onderzoek heeft aangetoond dat zowel B-cellen, T-cellen, macrofagen als verschillende cytokinen betrokken zijn bij het onderhouden van de chronische ontstekingsreactie die kenmerkend is voor RA [[3,4]](bronnen/Literatuurlijst_RA.pdf).
+De afgelopen jaren heeft transcriptomics een belangrijke bijdrage geleverd aan het begrijpen van de moleculaire mechanismen achter RA. Door genexpressieprofielen van patiënten en gezonde controles met elkaar te vergelijken kunnen differentieel geëxprimeerde genen (DEGs) worden geïdentificeerd die betrokken zijn bij ontstekingsprocessen, immuunregulatie en ziekteprogressie [[1,5]](bronnen/Literatuurlijst_RA.pdf). Eerdere bio-informatica studies rapporteerden sterke veranderingen in genen die betrokken zijn bij TNF-signaling, IL-17-signaling, B-celactivatie en adaptieve immuunresponsen[[1,2,4]](bronnen/Literatuurlijst_RA.pdf).
 
-Het doel van dit onderzoek is het vergelijken van genexpressieprofielen tussen gezonde personen en patiënten met Reumatoïde Artritis om genen en biologische pathways te identificeren die betrokken zijn bij de ziekte.
+Het doel van dit onderzoek is om verschillen in genexpressie tussen gezonde individuen en patiënten met Reumatoïde Artritis te identificeren met behulp van RNA-sequencing data. Daarnaast wordt onderzocht welke genen significant upregulated of downregulated zijn en welke biologische processen en signaalroutes betrokken zijn bij de waargenomen transcriptomische veranderingen.
 
 ## Methode
 Voor deze analyse werd gebruikgemaakt van RNA-sequencing data afkomstig van vier gezonde controles en vier patiënten met Reumatoïde Artritis.
@@ -40,38 +40,17 @@ Voor kwaliteitscontrole werd een [Principal Component Analysis (PCA)](scripts!  
 
 ## Workflow
 
-```mermaid
-flowchart TD
+![flowchart](assets/FlowchartRA.png)
 
-A[FASTQ bestanden] --> B[Read Alignment<br>Rsubread]
-B --> C[FeatureCounts]
-C --> D[Count Matrix]
+*Figuur 1: Overzicht van de uitgevoerde transcriptomische analyseworkflow.*
 
-D --> E[DESeq2 Analyse]
-
-E --> F[PCA]
-E --> G[Heatmap]
-E --> H[Volcano Plot]
-
-H --> I[Significante Genen]
-
-I --> J[GO Analyse]
-I --> K[KEGG Analyse]
-
-K --> L[Pathview Visualisatie]
-
-L --> M[Rheumatoid Arthritis Pathway]
-L --> N[IL-17 Pathway]
-L --> O[TNF Pathway]
-```
-
-
+---
 ## Resultaten
 PCA-analyse
 
 ![PCA-analyse](resultaten/PCAplot.png)
 
-*Figuur 2. Principal Component Analysis (PCA) van RNA-sequencing monsters afkomstig van gezonde controles en patiënten met Reumatoïde Artritis.*
+*Figuur 2: Principal Component Analysis (PCA) van RNA-sequencing monsters afkomstig van gezonde controles en patiënten met Reumatoïde Artritis.*
 
 De PCA-analyse liet een duidelijke scheiding zien tussen gezonde controles en RA-patiënten. De eerste twee componenten bevatten gezamenlijk ongeveer 84% van de totale variantie (PC1 = 74%, PC2 = 10%) . Dit laat zichtbare clustering zien.
 
@@ -119,7 +98,7 @@ Ook is er een [volcano plot](scripts/Volcanoplot) gemaakt voor het uitzetten van
 
 ![volcanoplot](resultaten/volcanoplot.png)
 
-*Figuur 3. Volcano plot van differentieel geëxprimeerde genen tussen gezonde controles en patiënten met Reumatoïde Artritis. De x-as geeft de log2 Fold Change weer en de y-as de negatieve log10 van de aangepaste p-waarde.*
+*Figuur 3: Volcano plot van differentieel geëxprimeerde genen tussen gezonde controles en patiënten met Reumatoïde Artritis. De x-as geeft de log2 Fold Change weer en de y-as de negatieve log10 van de aangepaste p-waarde.*
 
 
 ---
@@ -128,7 +107,9 @@ De heatmap van de 50 meest significante genen liet een duidelijke clustering zie
 
 ![heatmap](resultaten/heatmapplot.png)
 
-*Figuur 4. Heatmap van de 50 meest significante differentieel geëxprimeerde genen. Iedere rij vertegenwoordigt een gen en iedere kolom een monster. Rood geeft verhoogde expressie weer en blauw verlaagde expressie. De duidelijke clustering van gezonde controles en RA-patiënten bevestigt de aanwezigheid van consistente transcriptomische verschillen tussen beide groepen.*
+*Figuur 4: Heatmap van de 50 meest significante differentieel geëxprimeerde genen. Iedere rij vertegenwoordigt een gen en iedere kolom een monster. Rood geeft verhoogde expressie weer en blauw verlaagde expressie.*
+
+De duidelijke clustering van gezonde controles en RA-patiënten bevestigt de aanwezigheid van consistente transcriptomische verschillen tussen beide groepen.
 
 ---
 ## GO Analyse
@@ -137,7 +118,8 @@ Om de biologische betekenis van de gevonden differentieel geëxprimeerde genen t
 De meest significant verrijkte processen waren sterk gerelateerd aan de adaptieve immuunrespons en de activatie van lymfocyten. De hoogst scorende GO-term was:
 "Adaptive immune response based on somatic recombination of immune receptors built from immunoglobulin superfamily domains" (152 genen, adjusted p-value = 7,07 × 10⁻¹²).
 
-Daarnaast werden sterk verhoogfde expressie gevonden voor:
+Daarnaast werden sterk verhoogde expressie gevonden voor:
+
 *Tabel 4: sterkst verijkte processen biologische processen en hoeveelheid gerelateerde genen*
 | GO Biological Process | Genen |
 |----------------------|-------:|
@@ -152,31 +134,48 @@ Daarnaast werden sterk verhoogfde expressie gevonden voor:
 | Leukocyte mediated immunity | 160 |
 | B cell activation | 104 |
 
+---
 ## KEGG Analyse
 
 De [KEGG pathway enrichment analyse](scripts/KEGG) identificeerde meerdere ontstekingsgerelateerde pathways.
-Belangrijke pathways waren:
-Rheumatoid Arthritis pathway
-TNF signaling pathway
-IL-17 signaling pathway
-Cytokine-cytokine receptor interaction
+Deze analyse identificeert biologische signaalroutes waarin significant meer differentieel geëxprimeerde genen voorkomen dan op basis van toeval verwacht zou worden.
+De resultaten tonen een sterke verrijking van pathways die betrokken zijn bij immuunregulatie en ontstekingsprocessen. Met name pathways gerelateerd aan Reumatoïde Artritis, TNF-signaling en IL-17-signaling hadden grote verandering in expressie. Deze signaalroutes spelen een centrale rol bij de activatie van immuuncellen, de productie van pro-inflammatoire cytokinen en het onderhouden van chronische ontstekingsreacties in gewrichtsweefsel.
 
-Deze pathways spelen een centrale rol bij chronische ontsteking en gewrichtsschade.
+![KEGG Dotplot](resultaten/dotplotkegg.png)
 
+*figuur 5: KEGG pathway enrichment analyse weergegeven als dotplot. De grootte van de punten geeft het aantal betrokken genen weer, en de kleur de statistische significantie van de verrijking.*
+
+De dotplot toont de meest significant verrijkte KEGG pathways. De grootte van de punten geeft het aantal betrokken genen weer, terwijl de kleur de statistische significantie van de verrijking representeert. De sterkste verrijkingen werden gevonden voor ontstekings- en immuungerelateerde pathways
+
+---
 ## Pathview Analyse
 
 De Pathview visualisaties bevestigden dat meerdere genen binnen bekende RA-gerelateerde pathways afwijkende expressie vertonen.
 
-Rheumatoid Arthritis Pathway
+![Rheumatoid Arthritis Pathway](resultaten/RA.pathview.png)
+
+*figuur 6: Pathview-visualisatie van de Rheumatoid Arthritis pathway (KEGG hsa05323). Waarbij rood gekleurde genen verhoogde expressie hadden in RA-patiënten, en groene genen verlaagde expressie.*
+
+De figuur toont dat meerdere genen binnen de RA-pathway afwijkend gereguleerd zijn ten opzichte van gezonde controles.
 
 
-IL-17 Signaling Pathway
+---
+![IL-17 Signaling Pathway](resultaten/IL17.pathview.png)
+
+*figuur 7: Pathview-visualisatie van de IL-17 signaling pathway (KEGG hsa04657).*
+
+De weergegeven expressieveranderingen laten verhoogde activiteit van ontstekingsgerelateerde genen binnen deze pathway zien. IL-17 speelt een belangrijke rol bij de ontwikkeling en instandhouding van chronische ontstekingsprocessen bij Reumatoïde Artritis.
 
 
-TNF Signaling Pathway
+---
+![TNF Signaling Pathway](resultaten/TNFsignaling.pathview.png)
+
+*figuur 8: Pathview-visualisatie van de TNF signaling pathway (KEGG hsa04668).*
+
+Verschillende genen binnen deze pathway vertonen significante veranderingen in expressie. TNF-signaling vormt een centrale regulator van ontsteking en is een belangrijk bij de behandeling van Reumatoïde Artritis.
 
 
-
+---
 ## Conclusie
 
 In dit onderzoek zijn transcriptomische verschillen tussen gezonde individuen en patiënten met Reumatoïde Artritis onderzocht met behulp van RNA-sequencing.
