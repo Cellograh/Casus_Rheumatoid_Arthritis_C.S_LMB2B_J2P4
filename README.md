@@ -5,14 +5,16 @@
 
 *Afbeelding afkomstig van Khopde (2025), Manipal Hospitals Baner.*
 
+---
 ## Introductie
 Dit project onderzoekt verschillen in genexpressie tussen gezonde individuen en patiënten met Reumatoïde Artritis (RA) met behulp van [RNA-sequencing data](data/raw). Doormiddel van differentiële expressieanalyse is onderzocht welke genen significant verhoogd (upregulated) of verlaagd (downregulated) tot expressie komen bij RA-patiënten. Daarnaast zijn functionele analyses uitgevoerd om biologische processen en signaalroutes te identificeren die betrokken zijn bij de ziekte.
 
+---
 ## Inhoudsopgave
-- [Inleiding](##Inleiding)
-- [Methode](##Methode)
-- [Workflow](##Workflow)
-- [Resultaten](##Resultaten)
+- [Inleiding](#inleiding)
+- [Methode](#methode)
+- [Workflow](#workflow)
+- [Resultaten](#resultaten)
     - `PCA-plot`
     - `DESeq2-analyse`
     - `volcano plot`
@@ -20,12 +22,14 @@ Dit project onderzoekt verschillen in genexpressie tussen gezonde individuen en 
     - `KEGG pathway enrichment analyse`
     - `GO-analyse`
     - `gene pathway analysis`
-- [Conclusie](##Conclusie)
-- [Data Stewardship](##Data-Stewardship)
-    - `Data Stewardship`
-    - `Github beheer`
-- [Referenties](##Referenties)
+- [Conclusie](#conclusie)
+- [Data Stewardship](#data-stewardship)
+- [Github beheer](#github-beheer)
+- [Referenties](#referenties)
 
+
+---
+<a id="inleiding"></a>
 ## Inleiding
 Reumatoïde Artritis (RA) is een chronische auto-immuunziekte die wordt gekenmerkt door ontsteking van de synoviale gewrichten, wat uiteindelijk kan leiden tot kraakbeenafbraak, boterosie en blijvende gewrichtsschade. Wereldwijd wordt ongeveer 0,5–1% van de bevolking getroffen door RA, waardoor de ziekte een belangrijke oorzaak vormt van chronische pijn en verminderde levenskwaliteit. Hoewel de precieze oorzaak van RA nog niet volledig bekend is, speelt ontregeling van het immuunsysteem een centrale rol in de ontwikkeling en progressie van de ziekte. Onderzoek heeft aangetoond dat zowel B-cellen, T-cellen, macrofagen als verschillende cytokinen betrokken zijn bij het onderhouden van de chronische ontstekingsreactie die kenmerkend is voor RA [[3,4]](bronnen/Literatuurlijst_RA.pdf).
 De afgelopen jaren heeft transcriptomics een belangrijke bijdrage geleverd aan het begrijpen van de moleculaire mechanismen achter RA. Door genexpressieprofielen van patiënten en gezonde controles met elkaar te vergelijken kunnen differentieel geëxprimeerde genen (DEGs) worden geïdentificeerd die betrokken zijn bij ontstekingsprocessen, immuunregulatie en ziekteprogressie [[1,5]](bronnen/Literatuurlijst_RA.pdf). Eerdere bio-informatica studies rapporteerden sterke veranderingen in genen die betrokken zijn bij TNF-signaling, IL-17-signaling, B-celactivatie en adaptieve immuunresponsen[[1,2,4]](bronnen/Literatuurlijst_RA.pdf).
@@ -35,6 +39,8 @@ Het doel van dit onderzoek is om verschillen in genexpressie tussen gezonde indi
 
 Welke genen hebben significante differentiele expressie tussen gezonde individuen en patiënten met Reumatoïde Artritis en welke biologische processen en pathways zijn betrokken bij deze veranderingen?
 
+---
+<a id="methode"></a>
 ## Methode
 Voor deze analyse werd gebruikgemaakt van RNA-sequencing data afkomstig van vier gezonde controles en vier patiënten met Reumatoïde Artritis.
 De [ruwe paired-end FASTQ-bestanden](data/raw) werden [gemapt](scripts/mapping) tegen het humane referentiegenoom (GRCh38) met behulp van het [Rsubread-pakket](scripts/packages). Vervolgens werden reads per gen geteld met FeatureCounts, waarna een [count matrix](scripts/countmatrix) werd opgesteld. Differentiële expressieanalyse werd uitgevoerd met [DESeq2](scripts/DESeq2). Genen werden beschouwd als statistisch significant wanneer voldaan werd aan:
@@ -44,6 +50,8 @@ De [ruwe paired-end FASTQ-bestanden](data/raw) werden [gemapt](scripts/mapping) 
 
 Voor kwaliteitscontrole werd een [Principal Component Analysis (PCA)](scripts/DESeq2) uitgevoerd. Daarnaast werd een heatmap gemaakt van de 50 meest significante genen en een volcano plot om de verdeling van differentieel geëxprimeerde genen te visualiseren. Om de biologische betekenis van de gevonden genen te onderzoeken werden [Gene Ontology (GO)-analyse](scripts/packages), [KEGG pathway enrichment analyse](scripts/packages) en [Pathview](scripts/packages) pathway visualisaties uitgevoerd.
 
+---
+<a id="workflow"></a>
 ## Workflow
 
 ![flowchart](assets/FlowchartRA.png)
@@ -51,6 +59,7 @@ Voor kwaliteitscontrole werd een [Principal Component Analysis (PCA)](scripts/DE
 *Figuur 1: Overzicht van de uitgevoerde transcriptomische analyseworkflow.*
 
 ---
+<a id="resultaten"></a>
 ## Resultaten
 PCA-analyse
 
@@ -182,6 +191,7 @@ Verschillende genen binnen deze pathway vertonen significante veranderingen in e
 
 
 ---
+<a id="conclusie"></a>
 ## Conclusie
 
 In dit onderzoek zijn transcriptomische verschillen tussen gezonde individuen en patiënten met Reumatoïde Artritis (RA) onderzocht met behulp van RNA-sequencing. De analyse identificeerde in totaal 4572 significant differentieel geëxprimeerde genen, waarvan 2085 genen verhoogd en 2487 genen verlaagd tot expressie kwamen in de RA-groep. Deze resultaten tonen aan dat RA gepaard gaat met omvangrijke veranderingen in genexpressie en bevestigen dat de ziekte een sterke moleculaire impact heeft op het immuunsysteem. De gevonden upregulated genen waren voornamelijk betrokken bij immuunactivatie, cytokinesignalering en antilichaamproductie. Daarnaast lieten de GO- en KEGG-analyses een duidelijke verrijking zien van biologische processen en pathways die verband houden met adaptieve immuniteit, B-celgemedieerde immuunresponsen, TNF-signaling en IL-17-signaling. Deze bevindingen sluiten nauw aan bij bestaande wetenschappelijke literatuur, waarin ontregeling van B-cellen, T-cellen en pro-inflammatoire cytokinen wordt beschreven als een centraal mechanisme in de pathogenese van Reumatoïde Artritis.
@@ -189,14 +199,17 @@ In dit onderzoek zijn transcriptomische verschillen tussen gezonde individuen en
 Hoewel de resultaten duidelijke verschillen tussen beide groepen aantonen, heeft dit onderzoek ook beperkingen. Het aantal onderzochte monsters was relatief klein, waardoor individuele variatie mogelijk invloed heeft gehad op de resultaten. Daarnaast zijn de bevindingen uitsluitend gebaseerd op bio-informatica analyses en zijn de gevonden genexpressieveranderingen niet experimenteel gevalideerd.
 Toekomstig onderzoek zou zich kunnen richten op het analyseren van grotere patiëntgroepen en het valideren van de meest significante genen met technieken zoals qPCR of eiwitexpressie-analyses. Daarnaast kunnen de geïdentificeerde genen en pathways worden onderzocht als potentiële biomarkers of therapeutische aangrijpingspunten. Daarmee draagt dit onderzoek bij aan een beter begrip van de moleculaire mechanismen achter Reumatoïde Artritis en biedt het aanknopingspunten voor verdere ontwikkeling van gepersonaliseerde behandelstrategieën.
 
+<a id="data-stewardship"></a>
 ## Data Stewardship
 
 Zie: [Data Stewardship](data_stewardship/Data_Stewardship.md) 
 
+<a id="github-beheer"></a>
 ## GitHub Beheer
 
 Zie: [GitHub beheer](data_stewardship/Github_beheer.md)
 
+<a id="referenties"></a>
 ## Referenties
 Zie: [Literatuurlijst](bronnen/Literatuurlijst_RA.pdf)
 
