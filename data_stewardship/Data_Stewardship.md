@@ -13,14 +13,15 @@ Duidelijke mappenstructuur ----
 
 Een vaste mappenstructuur maakt het eenvoudiger om bestanden terug te vinden en voorkomt verwarring.
 Voor dit project wordt bijvoorbeeld de volgende structuur gebruikt:
-Project/
-  - assets/
-  - bronnen/
-  - data/raw/
-  - data/processed/
-  - resultaten/
-  - scripts/
-  - Data_stewardship/
+
+main/
+  - [assets/](assets)
+  - [bronnen/](bronnen)
+  - [data/raw/](data/raw)
+  - [data/processed/](data/processed)
+  - [resultaten/](resultaten)
+  - [scripts/](scripts)
+  - [data_stewardship/](data_stewardship)
 
 Waarom deze structuur?
 - data/raw/   	       - bevat de originele RNA-sequencingbestanden (FASTQ-bestanden). Deze bestanden blijven altijd ongewijzigd zodat de oorspronkelijke data behouden blijft.
@@ -37,15 +38,7 @@ Door deze structuur worden ruwe data, analyses en resultaten van elkaar gescheid
 Naamgeving van bestanden ----
 Consistente bestandsnamen maken het eenvoudiger om bestanden terug te vinden.
 
-Voorbeelden van bestandsnamen binnen dit project zijn:
-  - RA_DESeq2_results.csv
-  - RA_PCA_plot.png
-  - RA_heatmap.png
-  - RA_volcanoplot.png
-  - GO_analysis_results.csv
-  - KEGG_results.csv
-
-Bij het benoemen van bestanden worden de volgende richtlijnen aangehouden:
+ benoemen van bestanden worden de volgende richtlijnen aangehouden:
   - Gebruik geen spaties.
   - Gebruik duidelijke en beschrijvende namen.
   - Gebruik underscores (_) om woorden te scheiden.
@@ -71,7 +64,7 @@ Deze casus is individueel uitgevoerd maar de versiebeheer van Git en Github zijn
 Documentatie van scripts ----
 
 Om analyses reproduceerbaar te maken is goede documentatie van scripts essentieel. Iedere onderzoeker moet kunnen begrijpen welke stappen zijn uitgevoerd en waarom.
-Scripts bevatten daarom beschrijvende uitleg, ook zijn de verschillende analyses zowel in het volledige script voorzien van kopjes als dat ze in map "scripts" per analyse nog los gedocumenteerd zijn.
+Scripts bevatten daarom beschrijvende uitleg, ook zijn de verschillende analyses zowel in het volledige script voorzien van kopjes als dat ze in map [scripts](scripts) per analyse nog los gedocumenteerd zijn.
 
 Belangrijke onderdelen van scriptdocumentatie zijn:
   - Doel van het script.
@@ -96,6 +89,7 @@ Tools voor data-analyse en opslag ----
 
 Binnen dit project worden verschillende bioinformatica- en data-analysetools gebruikt:
 |Tool	| Functie |
+|-----------|--------|
 | R	| Statistische analyse en visualisatie |
 | Rsubread | Read alignment en feature counting |
 | DESeq2 |	Differentiële expressieanalyse |
@@ -104,6 +98,7 @@ Binnen dit project worden verschillende bioinformatica- en data-analysetools geb
 | Git |	Versiebeheer |
 | GitHub  |	Opslag en delen van scripts |
 
+De [gebruikte packages](scripts/packages) zijn ook apart gedocumenteerd met bijbehorende versienummers en gebruikte packagebron
 Naast GitHub is het belangrijk om regelmatig back-ups van data op een veilige opslaglocatie te bewaren om gegevensverlies te voorkomen. 
 Gedurende deze casus zijn er back-ups gemaakt van alle scripten en datasets zowel op OneDrive als via interne opslag 
 
@@ -134,7 +129,7 @@ Voordelen van open data zijn:
   - Efficiënter gebruik van bestaande datasets.
   - Bevordering van wetenschappelijke samenwerking.
 
-Binnen dit project wordt gebruikgemaakt van openbaar beschikbare RNA-sequencingdata. Hierdoor kunnen andere onderzoekers dezelfde analyses uitvoeren en controleren of vergelijkbare resultaten worden verkregen. 
+Binnen dit project wordt gebruikgemaakt van openbaar beschikbare [RNA-sequencingdata](data/raw). Hierdoor kunnen andere onderzoekers dezelfde analyses uitvoeren en controleren of vergelijkbare resultaten worden verkregen. 
 Dit verhoogt de betrouwbaarheid van de onderzoeksuitkomsten.
 Bij het publiceren van datasets moet echter altijd rekening worden gehouden met privacywetgeving en ethische richtlijnen.
 
