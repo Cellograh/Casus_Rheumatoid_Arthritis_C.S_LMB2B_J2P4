@@ -25,11 +25,9 @@ Dit project onderzoekt verschillen in genexpressie tussen gezonde individuen en 
 - Referenties
 
 ## Inleiding
-Reumatoïde Artritis (RA) is een chronische auto-immuunziekte die wordt gekenmerkt door ontsteking van de synoviale gewrichten. Door voortdurende activatie van het immuunsysteem ontstaat schade aan kraakbeen en botweefsel, wat uiteindelijk kan leiden tot gewrichtsdeformatie en functieverlies. Wereldwijd lijdt ongeveer 1% van de bevolking aan deze aandoening.
-Ondanks de beschikbaarheid van verschillende behandelingen zijn de moleculaire mechanismen achter RA nog niet volledig opgehelderd. Transcriptomics biedt de mogelijkheid om veranderingen in genexpressie op grote schaal te onderzoeken en kan inzicht geven in de biologische processen die betrokken zijn bij ziekteontwikkeling.
-Eerdere transcriptomische studies hebben aangetoond dat ontstekingsroutes zoals TNF-signaling, IL-17-signaling en cytokine-gemedieerde immuunresponsen een belangrijke rol spelen bij RA. Het identificeren van differentieel geëxprimeerde genen kan bijdragen aan het ontdekken van nieuwe biomarkers en potentiële therapeutische doelwitten.
-
-Het doel van dit onderzoek is het vergelijken van genexpressieprofielen tussen gezonde personen en patiënten met Reumatoïde Artritis om genen en biologische pathways te identificeren die betrokken zijn bij de ziekte.
+Reumatoïde Artritis (RA) is een chronische auto-immuunziekte die wordt gekenmerkt door ontsteking van de synoviale gewrichten, wat uiteindelijk kan leiden tot kraakbeenafbraak, boterosie en blijvende gewrichtsschade. Wereldwijd wordt ongeveer 0,5–1% van de bevolking getroffen door RA, waardoor de ziekte een belangrijke oorzaak vormt van chronische pijn en verminderde levenskwaliteit. Hoewel de precieze oorzaak van RA nog niet volledig bekend is, speelt ontregeling van het immuunsysteem een centrale rol in de ontwikkeling en progressie van de ziekte. Onderzoek heeft aangetoond dat zowel B-cellen, T-cellen, macrofagen als verschillende cytokinen betrokken zijn bij het onderhouden van de chronische ontstekingsreactie die kenmerkend is voor RA.
+De afgelopen jaren heeft transcriptomics een belangrijke bijdrage geleverd aan het begrijpen van de moleculaire mechanismen achter RA. Door genexpressieprofielen van patiënten en gezonde controles met elkaar te vergelijken kunnen differentieel geëxprimeerde genen (DEGs) worden geïdentificeerd die betrokken zijn bij ontstekingsprocessen, immuunregulatie en ziekteprogressie. Eerdere bio-informatica studies rapporteerden sterke veranderingen in genen die betrokken zijn bij TNF-signaling, IL-17-signaling, B-celactivatie en adaptieve immuunresponsen[[1,2]](bronnen/literatuurlijst).
+Het doel van dit onderzoek is om verschillen in genexpressie tussen gezonde individuen en patiënten met Reumatoïde Artritis te identificeren met behulp van RNA-sequencing data. Daarnaast wordt onderzocht welke genen significant upregulated of downregulated zijn en welke biologische processen en signaalroutes betrokken zijn bij de waargenomen transcriptomische veranderingen.
 
 ## Methode
 Voor deze analyse werd gebruikgemaakt van RNA-sequencing data afkomstig van vier gezonde controles en vier patiënten met Reumatoïde Artritis.
@@ -40,32 +38,11 @@ Voor kwaliteitscontrole werd een [Principal Component Analysis (PCA)](scripts!  
 
 ## Workflow
 
-```mermaid
-flowchart TD
+![flowchart](assets/FlowchartRA.png)
 
-A[FASTQ bestanden] --> B[Read Alignment<br>Rsubread]
-B --> C[FeatureCounts]
-C --> D[Count Matrix]
+*Figuur 1: Overzicht van de uitgevoerde transcriptomische analyseworkflow.*
 
-D --> E[DESeq2 Analyse]
-
-E --> F[PCA]
-E --> G[Heatmap]
-E --> H[Volcano Plot]
-
-H --> I[Significante Genen]
-
-I --> J[GO Analyse]
-I --> K[KEGG Analyse]
-
-K --> L[Pathview Visualisatie]
-
-L --> M[Rheumatoid Arthritis Pathway]
-L --> N[IL-17 Pathway]
-L --> O[TNF Pathway]
-```
-
-
+---
 ## Resultaten
 PCA-analyse
 
