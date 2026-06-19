@@ -1,6 +1,6 @@
 Data Stewardship
 
-Belang van databeheer ----
+## Belang van databeheer
 
 Goed databeheer is een essentieel onderdeel van wetenschappelijk onderzoek. Het zorgt ervoor dat onderzoeksresultaten reproduceerbaar, controleerbaar en betrouwbaar zijn. 
 Wanneer data en analyses goed georganiseerd zijn, kunnen andere onderzoekers of studenten de uitgevoerde stappen begrijpen en eventueel opnieuw uitvoeren.
@@ -8,20 +8,20 @@ Binnen dit project naar Reumatoïde Artritis worden grote hoeveelheden RNA-seque
 Zonder een duidelijke structuur bestaat het risico dat bestanden verloren gaan, analyses niet meer reproduceerbaar zijn of resultaten verkeerd geïnterpreteerd worden.
 Daarnaast draagt goed databeheer bij aan de kwaliteit van onderzoek doordat fouten sneller worden ontdekt en analyses beter gecontroleerd kunnen worden.
 
-
-Duidelijke mappenstructuur ----
+---
+## Duidelijke mappenstructuur
 
 Een vaste mappenstructuur maakt het eenvoudiger om bestanden terug te vinden en voorkomt verwarring.
 Voor dit project wordt bijvoorbeeld de volgende structuur gebruikt:
 
-main/
-  - [assets/](assets)
-  - [bronnen/](bronnen)
-  - [data/raw/](data/raw)
-  - [data/processed/](data/processed)
-  - [resultaten/](resultaten)
-  - [scripts/](scripts)
-  - [data_stewardship/](data_stewardship)
+`main/`
+  - `assets/`
+  - `bronnen/`
+  - `data/raw/`
+  - `data/processed/`
+  - `resultaten/`
+  - `scripts/`
+  - `data_stewardship/`
 
 Waarom deze structuur?
 - data/raw/   	       - bevat de originele RNA-sequencingbestanden (FASTQ-bestanden). Deze bestanden blijven altijd ongewijzigd zodat de oorspronkelijke data behouden blijft.
@@ -34,8 +34,8 @@ Waarom deze structuur?
 
 Door deze structuur worden ruwe data, analyses en resultaten van elkaar gescheiden, waardoor het project overzichtelijk en reproduceerbaar blijft.
 
-
-Naamgeving van bestanden ----
+---
+## Naamgeving van bestanden
 Consistente bestandsnamen maken het eenvoudiger om bestanden terug te vinden.
 
  benoemen van bestanden worden de volgende richtlijnen aangehouden:
@@ -45,8 +45,8 @@ Consistente bestandsnamen maken het eenvoudiger om bestanden terug te vinden.
 
 Een duidelijke naam maakt direct zichtbaar wat de inhoud van een bestand is.
 
-
-Versiebeheer ----
+---
+## Versiebeheer
 
 Versiebeheer houdt in dat veranderingen in bestanden worden bijgehouden. Hierdoor kan altijd worden teruggekeken naar eerdere versies van scripts, analyses en documentatie.
 Voor dit project wordt gebruikgemaakt van Git en GitHub. Tijdens het uitvoeren van de analyses worden wijzigingen opgeslagen via commits. 
@@ -60,8 +60,8 @@ De voordelen van deze versiebeheer zijn:
 GitHub is hierbij een centrale opslagplaats voor scripts, documentatie en projectinformatie.
 Deze casus is individueel uitgevoerd maar de versiebeheer van Git en Github zijn geschikt voor een goede samenwerking
 
-
-Documentatie van scripts ----
+---
+## Documentatie van scripts
 
 Om analyses reproduceerbaar te maken is goede documentatie van scripts essentieel. Iedere onderzoeker moet kunnen begrijpen welke stappen zijn uitgevoerd en waarom.
 Scripts bevatten daarom beschrijvende uitleg, ook zijn de verschillende analyses zowel in het volledige script voorzien van kopjes als dat ze in map [scripts](scripts) per analyse nog los gedocumenteerd zijn.
@@ -75,17 +75,16 @@ Belangrijke onderdelen van scriptdocumentatie zijn:
 
 Goede documentatie maakt het mogelijk om analyses later opnieuw uit te voeren of aan te passen.
 
-
-Platforms voor het delen van scripts ----
-
+---
+## Platforms voor het delen van scripts 
 Voor het delen van scripts en onderzoeksprojecten kunnen verschillende platforms worden gebruikt:
   - GitHub
   - GitLab
   - Bitbucket
 Voor dit project wordt GitHub gebruikt als centrale locatie voor versiebeheer, documentatie en het delen van scripts. Hierdoor kunnen anderen de analyses bekijken, controleren en eventueel hergebruiken.
 
-
-Tools voor data-analyse en opslag ----
+---
+## Tools voor data-analyse en opslag
 
 Binnen dit project worden verschillende bioinformatica- en data-analysetools gebruikt:
 |Tool	| Functie |
@@ -102,8 +101,8 @@ De [gebruikte packages](scripts/packages) zijn ook apart gedocumenteerd met bijb
 Naast GitHub is het belangrijk om regelmatig back-ups van data op een veilige opslaglocatie te bewaren om gegevensverlies te voorkomen. 
 Gedurende deze casus zijn er back-ups gemaakt van alle scripten en datasets zowel op OneDrive als via interne opslag 
 
-
-Omgaan met gevoelige of persoonlijke data ----
+---
+## Omgaan met gevoelige of persoonlijke data
 
 Bij onderzoek met patiëntgegevens moet zorgvuldig worden omgegaan met privacygevoelige informatie.
 
@@ -117,8 +116,8 @@ Belangrijke maatregelen zijn:
 In dit project wordt gewerkt met openbare RNA-sequencingdata en worden geen direct herleidbare persoonsgegevens verwerkt. 
 Wanneer patiëntinformatie wel beschikbaar zou zijn, moeten aanvullende beveiligingsmaatregelen worden genomen.
 
-
-Belang van open data en het publiceren van datasets ----
+---
+## Belang van open data en het publiceren van datasets
 
 Open data speelt een belangrijke rol binnen de wetenschap. Door datasets en analyses openbaar beschikbaar te maken kunnen resultaten worden gecontroleerd, gevalideerd en hergebruikt.
 
@@ -129,6 +128,7 @@ Voordelen van open data zijn:
   - Efficiënter gebruik van bestaande datasets.
   - Bevordering van wetenschappelijke samenwerking.
 
+---
 Binnen dit project wordt gebruikgemaakt van openbaar beschikbare [RNA-sequencingdata](data/raw). Hierdoor kunnen andere onderzoekers dezelfde analyses uitvoeren en controleren of vergelijkbare resultaten worden verkregen. 
 Dit verhoogt de betrouwbaarheid van de onderzoeksuitkomsten.
 Bij het publiceren van datasets moet echter altijd rekening worden gehouden met privacywetgeving en ethische richtlijnen.
