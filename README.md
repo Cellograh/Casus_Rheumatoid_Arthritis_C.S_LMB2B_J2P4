@@ -41,7 +41,7 @@ Welke genen hebben significante differentiele expressie tussen gezonde individue
 
 ---
 <a id="methode"></a>
-## Methode
+## Methode oud
 Voor deze analyse werd gebruikgemaakt van RNA-sequencing data afkomstig van vier gezonde controles en vier patiënten met Reumatoïde Artritis.
 De [ruwe paired-end FASTQ-bestanden](data/raw) werden [gemapt](scripts/mapping) tegen het humane referentiegenoom (GRCh38) met behulp van het [Rsubread-pakket](scripts/packages). Vervolgens werden reads per gen geteld met FeatureCounts, waarna een [count matrix](scripts/countmatrix) werd opgesteld. Differentiële expressieanalyse werd uitgevoerd met [DESeq2](scripts/DESeq2). Genen werden beschouwd als statistisch significant wanneer voldaan werd aan:
   - Adjusted p-value (padj) < 0,05
@@ -49,6 +49,35 @@ De [ruwe paired-end FASTQ-bestanden](data/raw) werden [gemapt](scripts/mapping) 
 > DESeq2 maakt gebruik van een negatief binomiaal model om verschillen in genexpressie te bepalen. Om multiple testing te corrigeren werd de Benjamini-Hochberg methode toegepast, waarbij een adjusted p-value (padj) kleiner dan 0,05 als significant werd beschouwd.
 
 Voor kwaliteitscontrole werd een [Principal Component Analysis (PCA)](scripts/DESeq2) uitgevoerd. Daarnaast werd een heatmap gemaakt van de 50 meest significante genen en een volcano plot om de verdeling van differentieel geëxprimeerde genen te visualiseren. Om de biologische betekenis van de gevonden genen te onderzoeken werden [Gene Ontology (GO)-analyse](scripts/packages), [KEGG pathway enrichment analyse](scripts/packages) en [Pathview](scripts/packages) pathway visualisaties uitgevoerd.
+
+## Methode nieuw
+### Dataset en ruwe RNA-sequencingdata
+Voor deze transcriptomicsanalyse werd gebruikgemaakt van RNA-sequencingdata van vier gezonde controles en vier patiënten met Reumatoïde Artritis (RA). De gebruikte dataset is afkomstig uit de studie van Platzer et al. (2019), waarin RNA-sequencingdata van verschillende RA-gerelateerde patiëntgroepen en gezonde controles werden verzameld en geanalyseerd. De oorspronkelijke RNA-seqdata werden door de auteurs verkregen via de Sequence Read Archive (SRA) [[10]](bronnen/Literatuurlijst_RA.pdf) .
+De specifieke accessionnummers van de in deze analyse gebruikte ruwe datasets zijn weergegeven in de tabel Datasetinformatie. Hierdoor kunnen de gebruikte RNA-sequencingdata opnieuw worden geïdentificeerd en verkregen.
+Voor een volledige beschrijving van de oorspronkelijke patiëntpopulaties, weefselbron, RNA-sequencingdata en dataverwerking wordt verwezen naar Platzer et al. (2019).
+### Read mapping en genkwantificatie
+De paired-end reads werden gemapt tegen het humane referentiegenoom GRCh38.p14 (NCBI accession GCF_000001405.40)[[ met behulp van het Rsubread-pakket (Liao et al., 2014). De gebruikte versie van Rsubread is opgenomen in de tabel met software- en packageversies. Na mapping werden de reads per gen geteld met FeatureCounts (Liao et al., 2014). De resulterende gen-tellingen werden samengevoegd tot een count matrix die als input werd gebruikt voor de differentiële expressieanalyse.
+### Differentiële genexpressie
+De differentiële genexpressie tussen de RA-groep en de gezonde controlegroep werd bepaald met het R/Bioconductor-pakket DESeq2 (Love et al., 2014). Hierbij werd de experimentele conditie gebruikt als verklarende variabele. DESeq2 modelleert read counts met een negatief binomiaal model. Voor multiple-testingcorrectie werd de Benjamini-Hochbergmethode toegepast.
+Een adjusted p-value (padj) < 0,05 werd gebruikt als criteria voor statistische significantie. Daarnaast werd een absolute log2 fold change (|log2FC|) > 1 gebruikt als criteria voor een verandering van minimaal een factor twee in genexpressie. De padj beschrijft hierbij de statistische significantie van een verschil, terwijl de log2FC de omvang en richting van de verandering beschrijft.
+De volledige scripts voor de read mapping, genkwantificatie en DESeq2-analyse zijn afzonderlijk beschikbaar in de map scripts. In ieder script wordt beschreven welke inputbestanden worden gebruikt, welke analyse wordt uitgevoerd en welke output wordt gegenereerd.
+### Kwaliteitscontrole en visualisatie
+Om de globale overeenkomst en verschillen tussen de RNA-sequencingmonsters te beoordelen werd Principal Component Analysis (PCA) uitgevoerd. Daarnaast werd een heatmap gemaakt van de 50 meest significant differentieel geëxprimeerde genen. Deze visualisatie werd gebruikt om te beoordelen of monsters met dezelfde experimentele conditie vergelijkbare genexpressieprofielen vertoonden.
+Een volcano plot werd gebruikt om de relatie tussen de omvang van de expressieverandering (log2FC) en de statistische significantie (-log10 adjusted p-value) van de onderzochte genen weer te geven.
+### Gene Ontology-analyse
+Om te onderzoeken welke biologische processen geassocieerd waren met de differentieel geëxprimeerde genen werd een Gene Ontology (GO) enrichmentanalyse uitgevoerd. Hierbij werd specifiek gekeken naar de GO-categorie Biological Process (BP). De analyse werd uitgevoerd met clusterProfiler (Wu et al., 2021), waarbij de geselecteerde differentieel geëxprimeerde genen als input werden gebruikt.
+De verrijking werd beoordeeld op basis van de adjusted p-value. De belangrijkste verrijkte GO-termen werden vervolgens gevisualiseerd met een dotplot. De gebruikte parameters, packageversies en scripts zijn terug te vinden in de bijbehorende analysebestanden.
+### KEGG pathway enrichmentanalyse
+Naast GO werd een KEGG pathway enrichmentanalyse uitgevoerd om te bepalen welke biologische signaalroutes oververtegenwoordigd waren onder de differentieel geëxprimeerde genen. De analyse werd uitgevoerd met clusterProfiler. De verrijkte pathways werden beoordeeld op basis van de adjusted p-value en weergegeven met een dotplot.
+De pathways die relevant waren voor de onderzoeksvraag werden geselecteerd voor verdere visualisatie met Pathview.
+Pathwayvisualisatie met Pathview
+Om de locatie van differentieel geëxprimeerde genen binnen specifieke biologische pathways te visualiseren werd het R-pakket Pathview (Luo & Brouwer, 2013) gebruikt. De volgende KEGG pathways werden gevisualiseerd:
+- Rheumatoid arthritis — hsa05323
+- IL-17 signaling pathway — hsa04657
+- TNF signaling pathway — hsa04668
+  
+De kleur van de genen in de Pathviewvisualisaties geeft de richting van de expressieverandering weer, waarbij rood staat voor verhoogde expressie en groen voor verlaagde expressie in de RA-groep ten opzichte van de gezonde controles.
+De gebruikte scripts en outputbestanden van de GO-, KEGG- en Pathviewanalyses zijn afzonderlijk beschikbaar in de map scripts en resultaten.
 
 ---
 <a id="workflow"></a>
