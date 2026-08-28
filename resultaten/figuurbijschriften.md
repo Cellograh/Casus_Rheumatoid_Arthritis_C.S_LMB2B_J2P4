@@ -46,10 +46,12 @@
   <strong>Figuur 7.</strong> Pathview-visualisatie van de IL-17 signaling pathway (KEGG hsa04657) op basis van differentieel geëxprimeerde genen tussen de RA- en controlegroep.
 </p>
 
+---
 <p align="center">
-  <img src="TNFsignaling.pathview.png)" alt="TNF Signaling Pathway">
+  <img src="TNFsignaling.pathview.png" alt="TNF Signaling Pathway">
 </p>
 <p align="center">
   <strong>Figuur 8.</strong> Pathview-visualisatie van de TNF signaling pathway (KEGG hsa04668) op basis van differentieel geëxprimeerde genen tussen de RA- en controlegroep.
 </p>
 
+---
