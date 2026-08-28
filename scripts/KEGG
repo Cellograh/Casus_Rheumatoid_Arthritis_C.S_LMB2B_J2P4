@@ -1,3 +1,31 @@
+# ============================================================
+# KEGG pathway enrichment analysis
+# ============================================================
+# Doel:
+# Vaststellen welke biologische pathways oververtegenwoordigd
+# zijn onder de geselecteerde differentieel geëxprimeerde genen.
+#
+# Input:
+# - DESeq2-resultaten
+#
+# Selectiecriteria:
+# - padj < 0.05
+# - |log2FoldChange| > 1
+#
+# Gene annotation:
+# Gen symbols worden geconverteerd naar Entrez Gene IDs
+# met behulp van org.Hs.eg.db.
+#
+# Analyse:
+# KEGG enrichment wordt uitgevoerd met clusterProfiler.
+#
+# Output:
+# - KEGG enrichment resultaten
+# - Dotplot van de verrijkte pathways
+#
+# Referentie:
+# Wu et al. (2021), clusterProfiler
+# ============================================================
 
 BiocManager::install("clusterProfiler")
 BiocManager::install("org.Hs.eg.db")
