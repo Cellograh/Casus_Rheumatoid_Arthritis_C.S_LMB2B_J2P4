@@ -1,4 +1,34 @@
-#Project transcriptomics script - Rheumatoide Artritis
+
+# ============================================================
+# Project Transcriptomics - Rheumatoid Arthritis
+# ============================================================
+# Doel:
+# Analyse van RNA-seq data van patiënten met Rheumatoid Arthritis
+# (RA) en gezonde controles.
+#
+# Dataset:
+# Platzer et al. (2019)
+#
+# Samples:
+# - 4 gezonde controles
+# - 4 RA-patiënten
+#
+# Referentiegenoom:
+# GRCh38.p14
+# NCBI accession: GCF_000001405.40
+#
+# Analyseworkflow:
+# 1. Read mapping
+# 2. BAM-bestanden verwerken
+# 3. Read counting
+# 4. Differential expression met DESeq2
+# 5. PCA en heatmap
+# 6. Volcano plot
+# 7. GO enrichment
+# 8. KEGG enrichment
+# 9. Pathway visualisatie met Pathview
+#
+# ============================================================
 
 #locatie vd bestanden ----
 list.files( "c:/Users/cleop/Documents/school/Project Transcriptomics reuma/Data_RA_raw/Data_RA_raw/")
