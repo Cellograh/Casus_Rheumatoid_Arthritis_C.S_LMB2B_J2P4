@@ -1,3 +1,24 @@
+# ============================================================
+# Genereren van de count matrix
+# ============================================================
+# Doel:
+# Het aantal reads per gen bepalen op basis van de gemapte
+# RNA-seq reads.
+#
+# Input:
+# - Gesorteerde BAM-bestanden
+# - genomic.gtf annotatiebestand
+#
+# Methode:
+# Reads worden op genniveau geteld met featureCounts.
+#
+# Output:
+# - Count matrix met het aantal reads per gen per sample
+#
+# Referentie:
+# Liao et al. (2014), featureCounts
+# ============================================================
+
 count_matrix <- featureCounts(
   files = samples,
   annot.ext = "genomic.gtf",
