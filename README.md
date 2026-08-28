@@ -54,8 +54,22 @@ Voor kwaliteitscontrole werd een [Principal Component Analysis (PCA)](scripts/DE
 ## Methode nieuw
 ### Dataset en ruwe RNA-sequencingdata
 Voor deze transcriptomicsanalyse werd gebruikgemaakt van RNA-sequencingdata van vier gezonde controles en vier patiënten met Reumatoïde Artritis (RA). De gebruikte dataset is afkomstig uit de studie van Platzer et al. (2019), waarin RNA-sequencingdata van verschillende RA-gerelateerde patiëntgroepen en gezonde controles werden verzameld en geanalyseerd. De [oorspronkelijke RNA-seqdata](data/raw) werden door de auteurs verkregen via de Sequence Read Archive (SRA) [[11]](bronnen/Literatuurlijst_RA.pdf) .
-De specifieke accessionnummers van de in deze analyse gebruikte ruwe datasets zijn weergegeven in de [packages](scripts/packages) map. Hierdoor kunnen de gebruikte RNA-sequencingdata opnieuw worden geïdentificeerd en verkregen.
+De specifieke accessionnummers van de in deze analyse gebruikte ruwe datasets zijn weergegeven in de tabel 1. Hierdoor kunnen de gebruikte RNA-sequencingdata opnieuw worden geïdentificeerd en verkregen.
 Voor een volledige beschrijving van de oorspronkelijke patiëntpopulaties, weefselbron, RNA-sequencingdata en dataverwerking wordt verwezen naar Platzer et al. (2019).
+
+
+*Tabel 1: accession nummers van ruwe RNA-seqdata datasets*
+| Sample | SRA accession nummer | Sequencing bestanden |
+|:---|:---:|:---|
+| RA1 | SRR4785819 | SRR4785819_1_subset40k.fastq en SRR4785819_2_subset40k.fastq |
+| RA2 | SRR4785820 | SRR4785820_1_subset40k.fastq en SRR4785820_2_subset40k.fastq |
+| RA3 | SRR4785828 | SRR4785828_1_subset40k.fastq en SRR4785828_2_subset40k.fastq |
+| RA4 | SRR4785831 | SRR4785831_1_subset40k.fastq en SRR4785831_2_subset40k.fastq |
+| RA5 | SRR4785979 | SRR4785979_1_subset40k.fastq en SRR4785979_2_subset40k.fastq |
+| RA6 | SRR4785980 | SRR4785980_1_subset40k.fastq en SRR4785980_2_subset40k.fastq |
+| RA7 | SRR4785986 | SRR4785986_1_subset40k.fastq en SRR4785986_2_subset40k.fastq |
+| RA8 | SRR4785988 | SRR4785988_1_subset40k.fastq en SRR4785988_2_subset40k.fastq |
+
 ### Read mapping en genkwantificatie
 De paired-end reads werden [gemapt](scripts/mapping) tegen het humane referentiegenoom GRCh38.p14 (NCBI accession GCF_000001405.40)[[6]](bronnen/Literatuurlijst_RA.pdf) met behulp van het Rsubread-pakket [[8]](bronnen/Literatuurlijst_RA.pdf). De gebruikte versie van Rsubread is opgenomen in de tabel met software- en packageversies. Na mapping werden de reads per gen geteld met FeatureCounts [[7]](bronnen/Literatuurlijst_RA.pdf). De resulterende gen-tellingen werden samengevoegd tot een count matrix die als input werd gebruikt voor de differentiële expressieanalyse.
 ### Differentiële genexpressie
