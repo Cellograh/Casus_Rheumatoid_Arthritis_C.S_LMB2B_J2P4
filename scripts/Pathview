@@ -1,3 +1,28 @@
+# ============================================================
+# KEGG pathway visualisatie met Pathview
+# ============================================================
+# Doel:
+# De expressieveranderingen van differentieel geëxprimeerde
+# genen binnen geselecteerde KEGG pathways visualiseren.
+#
+# Input:
+# - KEGG enrichment resultaten
+# - log2 fold change waarden
+#
+# Analyse:
+# De vijf hoogst gerangschikte pathways uit de KEGG-analyse
+# worden gevisualiseerd.
+#
+# Specifieke pathway:
+# - hsa05323: Rheumatoid arthritis
+#
+# Output:
+# - Pathway-afbeeldingen met weergegeven genexpressie
+#
+# Referentie:
+# Luo & Brouwer (2013), Pathview
+# ============================================================
+
 kegg_df <- as.data.frame(kegg_results)
 
 top_pathways <- kegg_df$ID[1:5]
