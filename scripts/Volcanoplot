@@ -1,3 +1,28 @@
+# ============================================================
+# Volcano plot
+# ============================================================
+# Doel:
+# De statistische significantie en de mate van verandering
+# van genexpressie tussen RA en controles visualiseren.
+#
+# Input:
+# - DESeq2-resultaten
+#
+# Assen:
+# - X-as: log2FoldChange
+# - Y-as: adjusted p-value (padj)
+#
+# Visualisatie:
+# EnhancedVolcano wordt gebruikt om differentieel geëxprimeerde
+# genen visueel te identificeren.
+#
+# Output:
+# - Volcano plot
+#
+# Package:
+# EnhancedVolcano
+# ============================================================
+
 library(EnhancedVolcano)
 
 EnhancedVolcano(
