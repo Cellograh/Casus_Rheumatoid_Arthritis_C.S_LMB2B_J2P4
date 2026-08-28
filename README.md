@@ -107,12 +107,12 @@ PCA-analyse
 De PCA werd uitgevoerd om te beoordelen of de monsters op basis van hun globale genexpressieprofiel van elkaar verschilden en of de RA- en controlegroepen afzonderlijk clusteren.
 De PCA liet een duidelijke scheiding zien tussen de gezonde controles en RA-patiënten. PC1 verklaarde 74% van de totale variantie en PC2 verklaarde 10%, waardoor de eerste twee componenten gezamenlijk ongeveer 84% van de variantie verklaarden. De monsters van de gezonde controles en RA-patiënten vormden afzonderlijke clusters. Dit wijst erop dat de twee onderzoeksgroepen duidelijke verschillen vertonen in hun globale transcriptomische profiel.
 
-
 ---
 ## Differentiële genexpressie
-De [DESeq2-analyse](scripts/DESeq2) identificeerde in totaal 4572 significant differentieel geëxprimeerde genen zoals zichtbaar is in de verkregen [DESeq2 resultaten](resultaten/DESeq2). Een samenvatting van deze resultaten is zichtbaar in tabel 1.
+Met DESeq2 werd onderzocht welke genen statistisch significant verschillend tot expressie kwamen tussen patiënten met RA en gezonde controles.
+De [DESeq2-analyse](scripts/DESeq2) identificeerde 4.572 differentieel geëxprimeerde genen op basis van de vooraf vastgestelde selectiecriteria. Hiervan waren 2.085 genen verhoogd en 2.487 genen verlaagd geëxprimeerd in de RA-groep ten opzichte van de gezonde controles.
   
-*Tabel 1: samenvatting DESeq2-resultaten*
+*Tabel 2: samenvatting DESeq2-resultaten*
 | Resultaat | Aantal |
 |------------|--------:|
 | Totaal geanalyseerde genen | 29407 |
@@ -120,9 +120,9 @@ De [DESeq2-analyse](scripts/DESeq2) identificeerde in totaal 4572 significant di
 | Upregulated genen | 2085 |
 | Downregulated genen | 2487 |
 
-De analyse toont aan dat een groot aantal genen significant verschillend tot expressie komt tussen gezonde individuen en RA-patiënten. Dit bevestigt dat Reumatoïde Artritis gepaard gaat met aanwezige veranderingen in genexpressie, deze expressie wordt zowel verhoogd (upregulated) of verlaagd (downregulated). De belangrijkste up- en downregulated genen zijn zichtbaar in figuur 2 en 3
+De analyse toont aan dat een groot aantal genen significant verschillend tot expressie komt tussen gezonde individuen en RA-patiënten. Dit bevestigt dat Reumatoïde Artritis gepaard gaat met aanwezige veranderingen in genexpressie, deze expressie wordt zowel verhoogd (upregulated) of verlaagd (downregulated). De belangrijkste up- en downregulated genen is zichtbaar in figuur 2 
 
-*Tabel 2: Belangrijkste upregulated genes en hun functie*
+*Tabel 3: Belangrijkste upregulated genes en hun functie*
 | Gen | log2 Fold Change | functie |
 |------|------:|------|
 | BCL2A1 | 6.71 | Regulatie van apoptose en ontstekingsreacties |
@@ -136,23 +136,14 @@ De analyse toont aan dat een groot aantal genen significant verschillend tot exp
 | IGLV1-47 | >3 | Antilichaamvorming |
 | Overige IG-genen | >3 | Adaptieve immuniteit |
 
-Verschillende immunoglobulinegenen werden sterk verhoogd gevonden, waaronder IGHV4-4, IGHV3-53, IGKJ2 en IGLV1-47. Dit suggereert verhoogde B-celactiviteit en antilichaamproductie, wat kenmerkend is voor auto-immuunziekten zoals RA.
-
-*Tabel 3: Belangrijkste downregulated genes en hun functie*
-| Gen | log2 Fold Change | Mogelijke functie |
-|------|------:|------|
-| ANKRD30BL | -10.12 | Transcriptieregulatie |
-| MT-ND6 | -11.42 | Mitochondriale ademhaling |
-| RAB3IL1 | -6.08 | Intracellulair transport |
-| SLC9A3R2 | -5.62 | Iontransport |
-| ZNF598 | -4.44 | Regulatie van translatie |
-| Overige significante genen | < -4 | Diverse cellulaire processen |
----
-Ook is er een [volcano plot](scripts/Volcanoplot) gemaakt voor het uitzetten van de significantie en de expressie van de geanalyseerde genen, dit plot toont een duidelijke verdeling van significante en niet-significante genen en geven een overzicht van alle geanalyseerde genen. Genen met een verhoogde expressie in RA bevinden zich aan de rechterzijde van de grafiek, terwijl genen met een verlaagde expressie aan de linkerzijde zichtbaar zijn. 
 
 ![volcanoplot](resultaten/volcanoplot.png)
 
-*Figuur 3: Volcano plot van differentieel geëxprimeerde genen tussen gezonde controles en patiënten met Reumatoïde Artritis. De x-as geeft de log2 Fold Change weer en de y-as de negatieve log10 van de aangepaste p-waarde.*
+*figuur 3: Volcano plot van de differentieel geëxprimeerde genen tussen vier gezonde controles en vier patiënten met Reumatoïde Artritis. De x-as toont de log2 fold change en de y-as de -log10 van de adjusted p-value. Genen rechts van nul hebben een hogere expressie in de RA-groep en genen links van nul een lagere expressie. De vooraf vastgestelde criteria voor differentiële expressie zijn gebruikt om significante genen te identificeren.*
+
+
+De [volcano plot](scripts/Volcanoplot) laat zien dat de differentieel geëxprimeerde genen zich aan beide zijden van de log2FC-as bevinden. De verhoogd geëxprimeerde genen bevinden zich aan de rechterzijde en de verlaagd geëxprimeerde genen aan de linkerzijde. Hiermee wordt zichtbaar dat de transcriptomische verschillen tussen de groepen zowel uit verhoogde als verlaagde genexpressie bestaan.
+Onder de sterk verhoogd geëxprimeerde genen bevonden zich meerdere immunoglobulinegenen, waaronder IGHV4-4, IGHV3-53, IGKJ2 en IGLV1-47. Deze bevinding vormt een eerste aanwijzing voor een verschil in immuungerelateerde genexpressie tussen beide groepen.
 
 
 ---
