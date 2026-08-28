@@ -78,7 +78,7 @@ De verrijking werd beoordeeld op basis van de adjusted p-value. De belangrijkste
 ### KEGG pathway enrichmentanalyse
 Naast GO werd een [KEGG pathway enrichmentanalyse](scripts/KEGG) uitgevoerd om te bepalen welke biologische signaalroutes oververtegenwoordigd waren onder de differentieel geëxprimeerde genen. De analyse werd uitgevoerd met clusterProfiler [[12]](bronnen/Literatuurlijst_RA.pdf). De verrijkte pathways werden beoordeeld op basis van de adjusted p-value en weergegeven met een dotplot.
 De pathways die relevant waren voor de onderzoeksvraag werden geselecteerd voor verdere visualisatie met Pathview.
-## Pathwayvisualisatie met Pathview
+### Pathwayvisualisatie met Pathview
 Om de locatie van differentieel geëxprimeerde genen binnen specifieke biologische pathways te visualiseren werd het R-pakket Pathview [[10]](bronnen/Literatuurlijst_RA.pdf) gebruikt. De volgende KEGG pathways werden gevisualiseerd:
 - Rheumatoid arthritis — hsa05323
 - IL-17 signaling pathway — hsa04657
@@ -93,22 +93,30 @@ De gebruikte scripts en outputbestanden van de GO-, KEGG- en Pathviewanalyses zi
 
 ![flowchart](assets/FlowchartRA.png)
 
-*Figuur 1: Overzicht van de uitgevoerde transcriptomische analyseworkflow.*
+<p align="center">
+  <strong>Figuur 1.</strong> <em>Overzicht van de uitgevoerde transcriptomische analyseworkflow.</em>
+</p>
+
 
 ---
 <a id="resultaten"></a>
 ## Resultaten
-PCA-analyse
+### RA- en controlegroep vertonen verschillende transcriptomische profielen
 
-![PCA-analyse](resultaten/PCAplot.png)
+<p align="center">
+  <img src="resultaten/PCAplot.png" alt="PCA-analyse">
+</p>
 
-*Figuur 2:  Principal Component Analysis (PCA) van RNA-sequencingmonsters van vier gezonde controles en vier patiënten met Reumatoïde Artritis. De positie van ieder punt vertegenwoordigt het globale genexpressieprofiel van één monster. PC1 en PC2 zijn 74% en 10% van de totale variantie*
+<p align="center">
+  <strong>Figuur 2.</strong> <em>Principal Component Analysis (PCA) van RNA-sequencingmonsters van vier gezonde controles en vier patiënten met Reumatoïde Artritis. De positie van ieder punt vertegenwoordigt het globale genexpressieprofiel van één monster. PC1 en PC2 zijn 74% en 10% van de totale variantie.</em>
+</p>
 
-De PCA werd uitgevoerd om te beoordelen of de monsters op basis van hun globale genexpressieprofiel van elkaar verschilden en of de RA- en controlegroepen afzonderlijk clusteren.
+
+De [PCA](scripts/mapping) werd uitgevoerd om te beoordelen of de monsters op basis van hun globale genexpressieprofiel van elkaar verschilden en of de RA- en controlegroepen afzonderlijk clusteren.
 De PCA liet een duidelijke scheiding zien tussen de gezonde controles en RA-patiënten. PC1 verklaarde 74% van de totale variantie en PC2 verklaarde 10%, waardoor de eerste twee componenten gezamenlijk ongeveer 84% van de variantie verklaarden. De monsters van de gezonde controles en RA-patiënten vormden afzonderlijke clusters. Dit wijst erop dat de twee onderzoeksgroepen duidelijke verschillen vertonen in hun globale transcriptomische profiel.
 
 ---
-## Differentiële genexpressie
+### Differentieel geëxprimeerde genen onderscheiden de twee onderzoeksgroepen
 Met DESeq2 werd onderzocht welke genen statistisch significant verschillend tot expressie kwamen tussen patiënten met RA en gezonde controles.
 De [DESeq2-analyse](scripts/DESeq2) identificeerde 4.572 differentieel geëxprimeerde genen op basis van de vooraf vastgestelde selectiecriteria. Hiervan waren 2.085 genen verhoogd en 2.487 genen verlaagd geëxprimeerd in de RA-groep ten opzichte van de gezonde controles.
   
@@ -120,52 +128,38 @@ De [DESeq2-analyse](scripts/DESeq2) identificeerde 4.572 differentieel geëxprim
 | Upregulated genen | 2085 |
 | Downregulated genen | 2487 |
 
-De analyse toont aan dat een groot aantal genen significant verschillend tot expressie komt tussen gezonde individuen en RA-patiënten. Dit bevestigt dat Reumatoïde Artritis gepaard gaat met aanwezige veranderingen in genexpressie, deze expressie wordt zowel verhoogd (upregulated) of verlaagd (downregulated). De belangrijkste up- en downregulated genen is zichtbaar in figuur 2 
+De analyse toont aan dat een groot aantal genen significant verschillend tot expressie komt tussen gezonde individuen en RA-patiënten. Dit bevestigt dat Reumatoïde Artritis gepaard gaat met aanwezige veranderingen in genexpressie, deze expressie wordt zowel verhoogd (upregulated) of verlaagd (downregulated).
 
-*Tabel 3: Belangrijkste upregulated genes en hun functie*
-| Gen | log2 Fold Change | functie |
-|------|------:|------|
-| BCL2A1 | 6.71 | Regulatie van apoptose en ontstekingsreacties |
-| PTGFR | 3.59 | Prostaglandine receptor |
-| CYTIP | 3.43 | Activatie van immuuncellen |
-| ADAMTS6 | 3.32 | Matrix remodeling |
-| SRGN | 3.26 | Secretie van ontstekingsmediatoren |
-| IGHV4-4 | >3 | Immunoglobuline zware keten |
-| IGHV3-53 | >3 | Antigeenherkenning |
-| IGKJ2 | >3 | B-cel receptor |
-| IGLV1-47 | >3 | Antilichaamvorming |
-| Overige IG-genen | >3 | Adaptieve immuniteit |
-
-
-![volcanoplot](resultaten/volcanoplot.png)
-
-*figuur 3: Volcano plot van de differentieel geëxprimeerde genen tussen vier gezonde controles en vier patiënten met Reumatoïde Artritis. De x-as toont de log2 fold change en de y-as de -log10 van de adjusted p-value. Genen rechts van nul hebben een hogere expressie in de RA-groep en genen links van nul een lagere expressie. De vooraf vastgestelde criteria voor differentiële expressie zijn gebruikt om significante genen te identificeren.*
-
+<p align="center">
+  <img src="resultaten/volcanoplot.png" alt="volcanoplot">
+</p>
+<p align="center">
+  <strong>Figuur 3.</strong> <em>Volcano plot van de differentieel geëxprimeerde genen tussen vier gezonde controles en vier patiënten met Reumatoïde Artritis. De x-as toont de log2 fold change en de y-as de -log10 van de adjusted p-value. Genen rechts van nul hebben een hogere expressie in de RA-groep en genen links van nul een lagere expressie. De vooraf vastgestelde criteria voor differentiële expressie zijn gebruikt om significante genen te identificeren.</em>
+</p>
 
 De [volcano plot](scripts/Volcanoplot) laat zien dat de differentieel geëxprimeerde genen zich aan beide zijden van de log2FC-as bevinden. De verhoogd geëxprimeerde genen bevinden zich aan de rechterzijde en de verlaagd geëxprimeerde genen aan de linkerzijde. Hiermee wordt zichtbaar dat de transcriptomische verschillen tussen de groepen zowel uit verhoogde als verlaagde genexpressie bestaan.
 Onder de sterk verhoogd geëxprimeerde genen bevonden zich meerdere immunoglobulinegenen, waaronder IGHV4-4, IGHV3-53, IGKJ2 en IGLV1-47. Deze bevinding vormt een eerste aanwijzing voor een verschil in immuungerelateerde genexpressie tussen beide groepen.
 
 
 ---
-## Heatmap
-De heatmap van de 50 meest significante genen liet een duidelijke clustering zien waarbij gezonde controles en RA-patiënten volledig van elkaar gescheiden werden.
+### Differentieel geëxprimeerde genen onderscheiden de twee onderzoeksgroepen
+De [heatmap](scripts/Heatmap) werd gebruikt om te beoordelen of de meest significant differentieel geëxprimeerde genen een consistent expressiepatroon tussen de monsters vertonen.
 
-![heatmap](resultaten/heatmapplot.png)
+<p align="center">
+  <img src="resultaten/heatmapplot.png" alt="heatmap">
+</p>
+<p align="center">
+  <strong>Figuur 4.</strong> <em>Heatmap van de 50 meest significant differentieel geëxprimeerde genen in vier gezonde controles en vier patiënten met Reumatoïde Artritis. Iedere rij vertegenwoordigt een gen en iedere kolom een RNA-sequencingmonster. De kleurintensiteit geeft de relatieve genexpressie weer volgens de gebruikte schaalverdeling. De clustering van monsters laat zien in hoeverre de transcriptomische profielen tussen de groepen overeenkomen.</em>
+</p>
 
-*Figuur 4: Heatmap van de 50 meest significante differentieel geëxprimeerde genen. Iedere rij vertegenwoordigt een gen en iedere kolom een monster. Rood geeft verhoogde expressie weer en blauw verlaagde expressie.*
-
-De duidelijke clustering van gezonde controles en RA-patiënten bevestigt de aanwezigheid van consistente transcriptomische verschillen tussen beide groepen.
+De heatmap van de 50 meest significante differentieel geëxprimeerde genen liet een duidelijke clustering zien. De gezonde controles en RA-patiënten vormden afzonderlijke clusters, waarbij de expressiepatronen binnen iedere groep onderling meer overeenkwamen dan tussen de groepen. Dit ondersteunt de bevinding uit de PCA dat de twee onderzoeksgroepen duidelijke verschillen in genexpressie vertonen.
 
 ---
-## GO Analyse
-Om de biologische betekenis van de gevonden differentieel geëxprimeerde genen te onderzoeken werd een [Gene Ontology (GO) Biological Process analyse](scripts/GO_analyse) uitgevoerd. In totaal werden 323 significant verrijkte biologische processen geïdentificeerd.
+### Differentieel geëxprimeerde genen zijn sterk betrokken bij adaptieve immuniteit
+De [GO Biological Process-analyse](scripts/GO_analyse) werd uitgevoerd om te bepalen welke biologische processen oververtegenwoordigd waren onder de differentieel geëxprimeerde genen.
+In totaal werden 323 significant verrijkte biologische processen geïdentificeerd. De sterkst vertegenwoordigde processen waren voornamelijk gerelateerd aan adaptieve immuniteit, lymfocytfunctie en immuunreceptoractiviteit. De belangrijkste significant verrijkte biologische processen zijn zichtbaar in tabel 4
 
-De meest significant verrijkte processen waren sterk gerelateerd aan de adaptieve immuunrespons en de activatie van lymfocyten. De hoogst scorende GO-term was:
-> "Adaptive immune response based on somatic recombination of immune receptors built from immunoglobulin superfamily domains" (152 genen, adjusted p-value = 7,07 × 10⁻¹²).
-
-Daarnaast werden sterk verhoogde expressie gevonden voor:
-
-*Tabel 4: sterkst verijkte processen biologische processen en hoeveelheid gerelateerde genen*
+*Tabel 4. Belangrijkste significant verrijkte GO Biological Process-termen. Het aantal genen geeft aan hoeveel van de differentieel geëxprimeerde genen aan iedere GO-term waren gekoppeld. De termen zijn geselecteerd op basis van de verrijkingsanalyse*
 | GO Biological Process | Genen |
 |----------------------|-------:|
 | Adaptive immune response based on somatic recombination of immune receptors | 152 |
@@ -179,21 +173,26 @@ Daarnaast werden sterk verhoogde expressie gevonden voor:
 | Leukocyte mediated immunity | 160 |
 | B cell activation | 104 |
 
----
-## KEGG Analyse
 
-De [KEGG pathway enrichment analyse](scripts/KEGG) identificeerde meerdere ontstekingsgerelateerde pathways.
-Deze analyse identificeert biologische signaalroutes waarin significant meer differentieel geëxprimeerde genen voorkomen dan op basis van toeval verwacht zou worden.
-De resultaten tonen een sterke verrijking van pathways die betrokken zijn bij immuunregulatie en ontstekingsprocessen. Met name pathways gerelateerd aan Reumatoïde Artritis, TNF-signaling en IL-17-signaling hadden grote verandering in expressie. Deze signaalroutes spelen een centrale rol bij de activatie van immuuncellen, de productie van pro-inflammatoire cytokinen en het onderhouden van chronische ontstekingsreacties in gewrichtsweefsel.
-
-![KEGG Dotplot](resultaten/dotplotkegg.png)
-
-*figuur 5: KEGG pathway enrichment analyse weergegeven als dotplot. De grootte van de punten geeft het aantal betrokken genen weer, en de kleur de statistische significantie van de verrijking.*
-
-De dotplot toont de meest significant verrijkte KEGG pathways. De grootte van de punten geeft het aantal betrokken genen weer, terwijl de kleur de statistische significantie van de verrijking representeert. De sterkste verrijkingen werden gevonden voor ontstekings- en immuungerelateerde pathways
+De meest significante GO-term was adaptive immune response based on somatic recombination of immune receptors built from immunoglobulin superfamily domains, waarin 152 genen betrokken waren (adjusted p-value = 7,07 × 10⁻¹²). Daarnaast werden onder andere lymphocyte differentiation (161 genen), immune response-regulating cell surface receptor signaling pathway (140 genen), B cell mediated immunity (88 genen) en B cell activation (104 genen) sterk vertegenwoordigd. De GO-analyse wijst daarmee op een sterke betrokkenheid van adaptieve immuunresponsen, waaronder B-cel- en lymfocytgerelateerde processen.
 
 ---
-## Pathview Analyse
+### KEGG Analyse
+
+De [KEGG pathway enrichmentanalyse](scripts/KEGG) werd uitgevoerd om te bepalen welke biologische signaalroutes geassocieerd waren met de differentieel geëxprimeerde genen.
+De verrijkte pathways waren voornamelijk gerelateerd aan immuunregulatie en ontstekingsprocessen. Onder de relevante pathways bevonden zich Rheumatoid arthritis, IL-17 signaling pathway en TNF signaling pathway. Deze resultaten sluiten aan bij de GO-analyse, waarin eveneens een sterke vertegenwoordiging van immuun- en ontstekingsgerelateerde processen werd gevonden.
+
+<p align="center">
+  <img src="resultaten/dotplotkegg.png" alt="KEGG Dotplot">
+</p>
+<p align="center">
+  <strong>Figuur 5.</strong> <em>Dotplot van de meest significant verrijkte KEGG pathways op basis van de differentieel geëxprimeerde genen. De weergegeven pathways zijn gerangschikt op basis van de verrijkingsresultaten. De grootte en kleur van de punten geven de in de analyse gebruikte maatstaven voor respectievelijk het aantal betrokken genen en de statistische significantie weer.</em>
+</p>
+
+De KEGG-resultaten geven daarmee aan dat de waargenomen transcriptomische verschillen niet alleen op het niveau van individuele genen aanwezig zijn, maar ook samenkomen in biologische signaalroutes die betrokken zijn bij de immuunrespons en ontsteking.
+
+---
+### Pathview Analyse
 
 De Pathview visualisaties bevestigden dat meerdere genen binnen bekende RA-gerelateerde pathways afwijkende expressie vertonen.
 
