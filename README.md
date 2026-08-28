@@ -40,7 +40,7 @@ Het doel van dit onderzoek is om verschillen in genexpressie tussen gezonde indi
 Welke genen hebben significante differentiele expressie tussen gezonde individuen en patiënten met Reumatoïde Artritis en welke biologische processen en pathways zijn betrokken bij deze veranderingen?
 
 ---
-<a id="methode"></a>
+
 ## Methode oud
 Voor deze analyse werd gebruikgemaakt van RNA-sequencing data afkomstig van vier gezonde controles en vier patiënten met Reumatoïde Artritis.
 De [ruwe paired-end FASTQ-bestanden](data/raw) werden [gemapt](scripts/mapping) tegen het humane referentiegenoom (GRCh38) met behulp van het [Rsubread-pakket](scripts/packages). Vervolgens werden reads per gen geteld met FeatureCounts, waarna een [count matrix](scripts/countmatrix) werd opgesteld. Differentiële expressieanalyse werd uitgevoerd met [DESeq2](scripts/DESeq2). Genen werden beschouwd als statistisch significant wanneer voldaan werd aan:
@@ -50,9 +50,10 @@ De [ruwe paired-end FASTQ-bestanden](data/raw) werden [gemapt](scripts/mapping) 
 
 Voor kwaliteitscontrole werd een [Principal Component Analysis (PCA)](scripts/DESeq2) uitgevoerd. Daarnaast werd een heatmap gemaakt van de 50 meest significante genen en een volcano plot om de verdeling van differentieel geëxprimeerde genen te visualiseren. Om de biologische betekenis van de gevonden genen te onderzoeken werden [Gene Ontology (GO)-analyse](scripts/packages), [KEGG pathway enrichment analyse](scripts/packages) en [Pathview](scripts/packages) pathway visualisaties uitgevoerd.
 
+<a id="methode"></a>
 ## Methode nieuw
 ### Dataset en ruwe RNA-sequencingdata
-Voor deze transcriptomicsanalyse werd gebruikgemaakt van RNA-sequencingdata van vier gezonde controles en vier patiënten met Reumatoïde Artritis (RA). De gebruikte dataset is afkomstig uit de studie van Platzer et al. (2019), waarin RNA-sequencingdata van verschillende RA-gerelateerde patiëntgroepen en gezonde controles werden verzameld en geanalyseerd. De oorspronkelijke RNA-seqdata werden door de auteurs verkregen via de Sequence Read Archive (SRA) [[11]](bronnen/Literatuurlijst_RA.pdf) .
+Voor deze transcriptomicsanalyse werd gebruikgemaakt van RNA-sequencingdata van vier gezonde controles en vier patiënten met Reumatoïde Artritis (RA). De gebruikte dataset is afkomstig uit de studie van Platzer et al. (2019), waarin RNA-sequencingdata van verschillende RA-gerelateerde patiëntgroepen en gezonde controles werden verzameld en geanalyseerd. De [oorspronkelijke RNA-seqdata](data/raw) werden door de auteurs verkregen via de Sequence Read Archive (SRA) [[11]](bronnen/Literatuurlijst_RA.pdf) .
 De specifieke accessionnummers van de in deze analyse gebruikte ruwe datasets zijn weergegeven in de [packages](scripts/packages) map. Hierdoor kunnen de gebruikte RNA-sequencingdata opnieuw worden geïdentificeerd en verkregen.
 Voor een volledige beschrijving van de oorspronkelijke patiëntpopulaties, weefselbron, RNA-sequencingdata en dataverwerking wordt verwezen naar Platzer et al. (2019).
 ### Read mapping en genkwantificatie
