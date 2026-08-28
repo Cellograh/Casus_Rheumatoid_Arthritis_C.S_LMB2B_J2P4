@@ -1,3 +1,32 @@
+# ============================================================
+# Gene Ontology enrichment analysis
+# ============================================================
+# Doel:
+# Onderzoeken welke biologische processen (Biological Process)
+# verrijkt zijn onder de geselecteerde differentieel
+# geëxprimeerde genen.
+#
+# Input:
+# - Geselecteerde differentieel geëxprimeerde genen
+# - Entrez Gene IDs
+#
+# Selectiecriteria:
+# - padj < 0.05
+# - |log2FoldChange| > 1
+#
+# GO-ontologie:
+# - Biological Process (BP)
+#
+# Multiple testing:
+# Benjamini-Hochberg correctie
+#
+# Output:
+# - GO enrichment resultaten
+#
+# Referentie:
+# Wu et al. (2021), clusterProfiler
+# ============================================================
+
 sig <- resultaten[which(resultaten$padj < 0.05 & abs(resultaten$log2FoldChange) > 1), ]
 genes <- rownames(sig)
 library(enrichplot)
