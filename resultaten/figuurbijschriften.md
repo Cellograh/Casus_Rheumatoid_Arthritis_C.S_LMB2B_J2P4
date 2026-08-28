@@ -3,7 +3,7 @@
 </p>
 
 <p align="center">
-  <strong>Figuur 2.</strong> Principal Component Analysis (PCA) van RNA-sequencingmonsters van vier gezonde controles en vier patiënten met Reumatoïde Artritis. De positie van ieder punt vertegenwoordigt het globale genexpressieprofiel van één monster. PC1 en PC2 verklaren respectievelijk 74% en 10% van de totale variantie.
+  <strong>Figuur 2.</strong> Principal Component Analysis (PCA) van RNA-sequencingmonsters van vier gezonde controles en vier patiënten met Reumatoïde Artritis. De positie van ieder punt vertegenwoordigt het globale genexpressieprofiel van één monster. PC1 en PC2 zijn 74% en 10% van de totale variantie.
 </p>
 
 ---
