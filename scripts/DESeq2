@@ -1,3 +1,28 @@
+# ============================================================
+# Differential expression analysis met DESeq2
+# ============================================================
+# Doel:
+# Identificeren van differentieel geëxprimeerde genen tussen
+# de RA-groep en de gezonde controlegroep.
+#
+# Input:
+# - Count matrix
+# - Treatmentinformatie per sample
+#
+# Analyse:
+# DESeq2 wordt gebruikt met treatment als experimentele factor.
+# Significantiedrempel:
+# - adjusted p-value (padj) < 0.05
+# - |log2FoldChange| > 1
+#
+# Output:
+# - DESeq2_resultaten.csv
+# - PCA-plot
+#
+# Referentie:
+# Love et al. (2014), DESeq2
+# ============================================================
+
 library(DESeq2)
 
 dds <- DESeqDataSetFromMatrix(
