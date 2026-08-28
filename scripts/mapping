@@ -1,3 +1,22 @@
+# ============================================================
+# RNA-seq read mapping
+# ============================================================
+# Doel:
+# Paired-end RNA-seq reads worden gemapt tegen het humane
+# referentiegenoom GRCh38.p14 met behulp van Rsubread.
+#
+# Input:
+# - GRCh38.p14 referentiegenoom:
+#   GCF_000001405.40_GRCh38.p14_genomic.fna
+# - Paired-end FASTQ-bestanden van de acht samples
+#
+# Output:
+# - BAM-bestanden per sample met gemapte reads
+#
+# Referentie:
+# Liao et al. (2019), Rsubread
+# ============================================================
+
 library(Rsubread)
 
 buildindex(
