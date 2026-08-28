@@ -1,3 +1,28 @@
+# ============================================================
+# Heatmap van differentieel geëxprimeerde genen
+# ============================================================
+# Doel:
+# De expressiepatronen van de 50 meest statistisch significante
+# genen tussen de verschillende samples visualiseren.
+#
+# Input:
+# - VST-getransformeerde expressiedata (vsd)
+# - DESeq2-resultaten
+# - Treatmentinformatie
+#
+# Selectie:
+# De 50 genen met de laagste adjusted p-values worden geselecteerd.
+#
+# Visualisatie:
+# Expressiewaarden worden row-wise geschaald.
+#
+# Output:
+# - Heatmap
+#
+# Package:
+# pheatmap
+# ============================================================
+
 library(pheatmap)
 
 top50 <- head(order(resultaten$padj), 50)
