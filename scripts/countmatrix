@@ -7,7 +7,7 @@
 #
 # Input:
 # - Gesorteerde BAM-bestanden
-# - genomic.gtf annotatiebestand
+# - genomic.gtf bestanden
 #
 # Methode:
 # Reads worden op genniveau geteld met featureCounts.
