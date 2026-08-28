@@ -42,7 +42,7 @@ Welke genen hebben significante differentiele expressie tussen gezonde individue
 ---
 
 <a id="methode"></a>
-## Methode nieuw
+## Methode
 ### Dataset en ruwe RNA-sequencingdata
 Voor deze transcriptomicsanalyse werd gebruikgemaakt van RNA-sequencingdata van vier gezonde controles en vier patiënten met Reumatoïde Artritis (RA). De gebruikte dataset is afkomstig uit de studie van Platzer et al. (2019), waarin RNA-sequencingdata van verschillende RA-gerelateerde patiëntgroepen en gezonde controles werden verzameld en geanalyseerd. De [oorspronkelijke RNA-seqdata](data/raw) werden door de auteurs verkregen via de Sequence Read Archive (SRA) [[11]](bronnen/Literatuurlijst_RA.pdf) .
 De specifieke accessionnummers van de in deze analyse gebruikte ruwe datasets zijn weergegeven in de tabel 1. Hierdoor kunnen de gebruikte RNA-sequencingdata opnieuw worden geïdentificeerd en verkregen.
@@ -102,9 +102,11 @@ PCA-analyse
 
 ![PCA-analyse](resultaten/PCAplot.png)
 
-*Figuur 2: Principal Component Analysis (PCA) van RNA-sequencing monsters afkomstig van gezonde controles en patiënten met Reumatoïde Artritis.*
+*Figuur 2:  Principal Component Analysis (PCA) van RNA-sequencingmonsters van vier gezonde controles en vier patiënten met Reumatoïde Artritis. De positie van ieder punt vertegenwoordigt het globale genexpressieprofiel van één monster. PC1 en PC2 zijn 74% en 10% van de totale variantie*
 
-De PCA-analyse liet een duidelijke scheiding zien tussen gezonde controles en RA-patiënten. De eerste twee componenten bevatten gezamenlijk ongeveer 84% van de totale variantie (PC1 = 74%, PC2 = 10%) . Dit laat zichtbare clustering zien.
+De PCA werd uitgevoerd om te beoordelen of de monsters op basis van hun globale genexpressieprofiel van elkaar verschilden en of de RA- en controlegroepen afzonderlijk clusteren.
+De PCA liet een duidelijke scheiding zien tussen de gezonde controles en RA-patiënten. PC1 verklaarde 74% van de totale variantie en PC2 verklaarde 10%, waardoor de eerste twee componenten gezamenlijk ongeveer 84% van de variantie verklaarden. De monsters van de gezonde controles en RA-patiënten vormden afzonderlijke clusters. Dit wijst erop dat de twee onderzoeksgroepen duidelijke verschillen vertonen in hun globale transcriptomische profiel.
+
 
 ---
 ## Differentiële genexpressie
