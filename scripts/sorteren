@@ -1,3 +1,20 @@
+# ============================================================
+# BAM-bestanden sorteren en indexeren
+# ============================================================
+# Doel:
+# De gemapte BAM-bestanden worden gesorteerd en geïndexeerd,
+# zodat deze bestanden geschikt zijn voor verdere RNA-seq analyse.
+#
+# Input:
+# - BAM-bestanden afkomstig uit het mapping-script
+#
+# Output:
+# - Gesorteerde en geïndexeerde BAM-bestanden
+#
+# Benodigd package:
+# Rsamtools
+# ============================================================
+
 library(Rsamtools)
 library(Rsubread)
 
